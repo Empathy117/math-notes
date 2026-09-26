@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "playground",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "playground", "dev"],
+      "port": 5180,
+      "autoPort": true
+    },
+    {
+      "name": "playground-ai",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "set -a; . spikes/s4-ai-corpus/.env; set +a; PORT=${PORT:-5181} exec pnpm --filter playground dev"],
+      "port": 5181,
+      "autoPort": true
+    }
+  ]
+}

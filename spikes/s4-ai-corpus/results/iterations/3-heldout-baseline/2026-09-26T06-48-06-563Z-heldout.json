@@ -1,0 +1,216 @@
+{
+  "suite": "heldout",
+  "model": "deepseek-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "thinking": null,
+  "maxTokens": null,
+  "outcomes": [
+    {
+      "id": "hc-01",
+      "category": "ho-complex",
+      "input": "麦克斯韦方程组的微分形式，四个方程排成一组",
+      "expect": {
+        "status": "ok",
+        "pattern": "\\\\begin\\{(aligned|cases|gathered|array)\\}.*\\\\nabla.*\\\\nabla.*\\\\nabla.*\\\\nabla.*\\\\end\\{"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "麦克斯韦方程组的微分形式，四个方程用 cases 排成一组",
+        "latex": "\\begin{cases} \\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_{0}} \\\\ \\nabla \\cdot \\mathbf{B} = 0 \\\\ \\nabla \\times \\mathbf{E} = -\\frac{\\partial \\mathbf{B}}{\\partial t} \\\\ \\nabla \\times \\mathbf{B} = \\mu_{0} \\mathbf{J} + \\mu_{0} \\varepsilon_{0} \\frac{\\partial \\mathbf{E}}{\\partial t} \\end{cases}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\begin{cases} \\nabla \\cdot \\vec{E} = \\frac{\\rho}{\\varepsilon_{0}} \\\\ \\nabla \\cdot \\vec{B} = 0 \\\\ \\nabla \\times \\vec{E} = -\\frac{\\partial \\vec{B}}{\\partial t} \\\\ \\nabla \\times \\vec{B} = \\mu_{0} \\vec{J} + \\mu_{0} \\varepsilon_{0} \\frac{\\partial \\vec{E}}{\\partial t} \\end{cases}",
+            "interpretation": "用 \\vec 代替 \\mathbf 表示矢量"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1330,
+      "firstTokenMs": 427,
+      "finishReason": "stop",
+      "completionTokens": 298,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "hc-02",
+      "category": "ho-complex",
+      "input": "三阶行列式按第一行展开成三个二阶行列式",
+      "expect": {
+        "status": "ok",
+        "pattern": "\\\\begin\\{vmatrix\\}.*\\\\end\\{vmatrix\\}.*=.*\\\\begin\\{vmatrix\\}.*\\\\begin\\{vmatrix\\}.*\\\\begin\\{vmatrix\\}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "三阶行列式按第一行展开为三个二阶行列式之和",
+        "latex": "\\begin{vmatrix} a_{11} & a_{12} & a_{13} \\\\ a_{21} & a_{22} & a_{23} \\\\ a_{31} & a_{32} & a_{33} \\end{vmatrix} = a_{11} \\begin{vmatrix} a_{22} & a_{23} \\\\ a_{32} & a_{33} \\end{vmatrix} - a_{12} \\begin{vmatrix} a_{21} & a_{23} \\\\ a_{31} & a_{33} \\end{vmatrix} + a_{13} \\begin{vmatrix} a_{21} & a_{22} \\\\ a_{31} & a_{32} \\end{vmatrix}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1406,
+      "firstTokenMs": 788,
+      "finishReason": "stop",
+      "completionTokens": 220,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "hc-03",
+      "category": "ho-complex",
+      "input": "傅里叶级数展开式，连同系数 a_n、b_n 的积分公式",
+      "expect": {
+        "status": "ok",
+        "pattern": "\\\\sum.*a_\\{?n\\}?.*\\\\int.*b_\\{?n\\}?.*\\\\int"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "周期为 2π 的傅里叶级数展开式及其系数 a_n、b_n 的积分公式",
+        "latex": "f(x) \\sim \\frac{a_{0}}{2} + \\sum_{n=1}^{\\infty} \\left( a_{n} \\cos nx + b_{n} \\sin nx \\right), \\quad a_{n} = \\frac{1}{\\pi} \\int_{-\\pi}^{\\pi} f(x) \\cos nx \\, dx, \\quad b_{n} = \\frac{1}{\\pi} \\int_{-\\pi}^{\\pi} f(x) \\sin nx \\, dx",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\begin{aligned} f(x) &\\sim \\frac{a_{0}}{2} + \\sum_{n=1}^{\\infty} \\left( a_{n} \\cos nx + b_{n} \\sin nx \\right) \\\\ a_{n} &= \\frac{1}{\\pi} \\int_{-\\pi}^{\\pi} f(x) \\cos nx \\, dx \\\\ b_{n} &= \\frac{1}{\\pi} \\int_{-\\pi}^{\\pi} f(x) \\sin nx \\, dx \\end{aligned}",
+            "interpretation": "分行排列的同一组公式"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "默认周期为 2π 的区间 [-π, π]"
+      },
+      "latencyMs": 1714,
+      "firstTokenMs": 713,
+      "finishReason": "stop",
+      "completionTokens": 328,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "hc-04",
+      "category": "ho-complex",
+      "input": "高斯公式：闭曲面上的通量积分等于散度的三重积分",
+      "expect": {
+        "status": "ok",
+        "pattern": "(\\\\oiint|\\\\iint|\\\\oint).*\\\\iiint"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "高斯散度定理：闭曲面上的通量积分等于散度的三重积分",
+        "latex": "\\oiint_{S} \\mathbf{F} \\cdot d\\mathbf{S} = \\iiint_{V} \\nabla \\cdot \\mathbf{F} \\, dV",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\iint_{S} \\mathbf{F} \\cdot \\mathbf{n} \\, dS = \\iiint_{V} \\nabla \\cdot \\mathbf{F} \\, dV",
+            "interpretation": "用单位法向量 n 写通量"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1146,
+      "firstTokenMs": 595,
+      "finishReason": "stop",
+      "completionTokens": 152,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "hc-05",
+      "category": "ho-complex",
+      "input": "f(x) 在 x0 处泰勒展开到三阶，带皮亚诺余项",
+      "expect": {
+        "status": "ok",
+        "pattern": "f'''.*o\\\\?(left)?\\("
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "f(x) 在 x₀ 处展开到三阶的泰勒公式，余项为皮亚诺型 o((x-x₀)³)",
+        "latex": "f(x) = f(x_{0}) + f'(x_{0})(x - x_{0}) + \\frac{f''(x_{0})}{2!}(x - x_{0})^{2} + \\frac{f'''(x_{0})}{3!}(x - x_{0})^{3} + o\\left((x - x_{0})^{3}\\right)",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "f(x) = \\sum_{k=0}^{3} \\frac{f^{(k)}(x_{0})}{k!}(x - x_{0})^{k} + o\\left((x - x_{0})^{3}\\right)",
+            "interpretation": "求和号写法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1082,
+      "firstTokenMs": 393,
+      "finishReason": "stop",
+      "completionTokens": 220,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    }
+  ],
+  "edits": []
+}

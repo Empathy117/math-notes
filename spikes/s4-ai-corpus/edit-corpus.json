@@ -1,0 +1,21 @@
+[
+  { "id": "ed-01", "category": "edit", "instruction": "把分母改成 x+3", "fullLatex": "\\frac{\\sin x}{x}", "selectionLatex": "x", "expect": { "status": "ok", "latex": "x+3" } },
+  { "id": "ed-02", "category": "edit", "instruction": "改成立方", "fullLatex": "x^{2}+y^{2}=1", "selectionLatex": "x^{2}", "expect": { "status": "ok", "latex": "x^{3}" } },
+  { "id": "ed-03", "category": "edit", "instruction": "上限改成无穷", "fullLatex": "\\int_{0}^{1} e^{-x}\\,dx", "selectionLatex": "1", "expect": { "status": "ok", "latex": "\\infty", "accept": ["+\\infty"] } },
+  { "id": "ed-04", "category": "edit", "instruction": "把 sin 换成 cos", "fullLatex": "\\lim_{x\\to0}\\frac{\\sin x}{x}", "selectionLatex": "\\sin x", "expect": { "status": "ok", "latex": "\\cos x" } },
+  { "id": "ed-05", "category": "edit", "instruction": "加上绝对值", "fullLatex": "\\sqrt{x-1}", "selectionLatex": "x-1", "expect": { "status": "ok", "latex": "|x-1|" } },
+  { "id": "ed-06", "category": "edit", "instruction": "写成向量", "fullLatex": "a\\cdot b", "selectionLatex": "a", "expect": { "status": "ok", "latex": "\\vec{a}", "accept": ["\\mathbf{a}", "\\boldsymbol{a}"] } },
+  { "id": "ed-07", "category": "edit", "instruction": "写成求和符号", "fullLatex": "1+2+\\cdots+n=\\frac{n(n+1)}{2}", "selectionLatex": "1+2+\\cdots+n", "expect": { "status": "ok", "latex": "\\sum_{k=1}^{n}k", "accept": ["\\sum_{i=1}^{n}i", "\\sum_{j=1}^{n}j"] } },
+  { "id": "ed-08", "category": "edit", "instruction": "展开", "fullLatex": "(a+b)^{2}=c", "selectionLatex": "(a+b)^{2}", "expect": { "status": "ok", "latex": "a^{2}+2ab+b^{2}" } },
+  { "id": "ed-09", "category": "edit", "instruction": "化简", "fullLatex": "y=\\frac{2x}{4}", "selectionLatex": "\\frac{2x}{4}", "expect": { "status": "ok", "latex": "\\frac{x}{2}" } },
+  { "id": "ed-10", "category": "edit", "instruction": "换成偏导", "fullLatex": "\\frac{df}{dx}=0", "selectionLatex": "\\frac{df}{dx}", "expect": { "status": "ok", "latex": "\\frac{\\partial f}{\\partial x}" } },
+  { "id": "ed-11", "category": "edit", "instruction": "make it the square root", "fullLatex": "y=x+1", "selectionLatex": "x+1", "expect": { "status": "ok", "latex": "\\sqrt{x+1}" } },
+  { "id": "ed-12", "category": "edit", "instruction": "指数加一", "fullLatex": "e^{x}", "selectionLatex": "x", "expect": { "status": "ok", "latex": "x+1" } },
+  { "id": "ed-13", "category": "edit", "instruction": "change the lower limit to minus infinity", "fullLatex": "\\int_{0}^{\\infty} e^{-x^{2}}\\,dx", "selectionLatex": "0", "expect": { "status": "ok", "latex": "-\\infty" } },
+
+  { "id": "ed-14", "category": "edit-scope", "instruction": "改成趋于无穷", "fullLatex": "\\lim_{x\\to0}\\frac{\\sin x}{x}=1", "selectionLatex": "0", "expect": { "status": "ok", "latex": "\\infty", "accept": ["+\\infty"] } },
+  { "id": "ed-15", "category": "edit-scope", "instruction": "分子分母对调", "fullLatex": "y=\\frac{a}{b}+c", "selectionLatex": "\\frac{a}{b}", "expect": { "status": "ok", "latex": "\\frac{b}{a}" } },
+
+  { "id": "ed-16", "category": "edit-boundary", "instruction": "嗯……", "fullLatex": "x^{2}", "selectionLatex": "x^{2}", "expect": { "status": "unclear" } },
+  { "id": "ed-17", "category": "edit-boundary", "instruction": "把这里画成交换图", "fullLatex": "A\\to B", "selectionLatex": "A\\to B", "expect": { "status": "unsupported" } }
+]

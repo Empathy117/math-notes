@@ -1,0 +1,3844 @@
+{
+  "model": "deepseek-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "thinking": null,
+  "maxTokens": null,
+  "outcomes": [
+    {
+      "id": "zh-01",
+      "category": "zh-desc",
+      "input": "(x+1)^2从1到2的定积分",
+      "expect": {
+        "status": "ok",
+        "latex": "\\int_{1}^{2}(x+1)^{2}\\,dx",
+        "value": "19/3"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "(x+1)² 从 1 到 2 的定积分",
+        "latex": "\\int_{1}^{2} (x+1)^{2} \\, dx",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "\\frac{19}{3}"
+        }
+      },
+      "latencyMs": 701,
+      "firstTokenMs": 363,
+      "finishReason": "stop",
+      "completionTokens": 86,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "\\frac{19}{3}",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "zh-02",
+      "category": "zh-desc",
+      "input": "x的平方",
+      "expect": {
+        "status": "ok",
+        "latex": "x^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 的平方",
+        "latex": "x^{2}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 655,
+      "firstTokenMs": 463,
+      "finishReason": "stop",
+      "completionTokens": 53,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "zh-03",
+      "category": "zh-desc",
+      "input": "三分之二",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{2}{3}",
+        "value": "2/3"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "三分之二",
+        "latex": "\\frac{2}{3}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "\\frac{2}{3}"
+        }
+      },
+      "latencyMs": 568,
+      "firstTokenMs": 345,
+      "finishReason": "stop",
+      "completionTokens": 60,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "\\frac{2}{3}",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "zh-04",
+      "category": "zh-desc",
+      "input": "根号下x加1",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\sqrt{x+1}",
+        "alternatives": [
+          "\\sqrt{x}+1"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "根号下 x 加 1，即对 x+1 开平方",
+        "latex": "\\sqrt{x+1}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 894,
+      "firstTokenMs": 634,
+      "finishReason": "stop",
+      "completionTokens": 68,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": false,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": false,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "zh-05",
+      "category": "zh-desc",
+      "input": "e的x次方",
+      "expect": {
+        "status": "ok",
+        "latex": "e^{x}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "e 的 x 次方",
+        "latex": "e^{x}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\exp x",
+            "interpretation": "指数函数记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 621,
+      "firstTokenMs": 568,
+      "finishReason": "stop",
+      "completionTokens": 70,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "zh-06",
+      "category": "zh-desc",
+      "input": "n的阶乘",
+      "expect": {
+        "status": "ok",
+        "latex": "n!"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "n 的阶乘",
+        "latex": "n!",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\Gamma(n+1)",
+            "interpretation": "用伽马函数表示"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 648,
+      "firstTokenMs": 391,
+      "finishReason": "stop",
+      "completionTokens": 70,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "zh-07",
+      "category": "zh-desc",
+      "input": "从1到n对k的平方求和",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sum_{k=1}^{n}k^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "k 的平方从 k=1 到 n 求和",
+        "latex": "\\sum_{k=1}^{n} k^{2}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 782,
+      "firstTokenMs": 506,
+      "finishReason": "stop",
+      "completionTokens": 71,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "zh-08",
+      "category": "zh-desc",
+      "input": "x趋于0时sinx比x的极限",
+      "expect": {
+        "status": "ok",
+        "latex": "\\lim_{x\\to0}\\frac{\\sin x}{x}",
+        "value": "1"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 趋于 0 时 sin x 与 x 之比的极限",
+        "latex": "\\lim_{x \\to 0} \\frac{\\sin x}{x}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "1"
+        }
+      },
+      "latencyMs": 801,
+      "firstTokenMs": 573,
+      "finishReason": "stop",
+      "completionTokens": 79,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "1",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "zh-09",
+      "category": "zh-desc",
+      "input": "f对x的偏导数",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{\\partial f}{\\partial x}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "f 对 x 的偏导数",
+        "latex": "\\frac{\\partial f}{\\partial x}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\partial_{x} f",
+            "interpretation": "下标记法"
+          },
+          {
+            "latex": "f_{x}",
+            "interpretation": "简写下标记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 733,
+      "firstTokenMs": 405,
+      "finishReason": "stop",
+      "completionTokens": 96,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "zh-10",
+      "category": "zh-desc",
+      "input": "向量a点乘向量b",
+      "expect": {
+        "status": "ok",
+        "latex": "\\vec{a}\\cdot\\vec{b}",
+        "accept": [
+          "\\mathbf{a}\\cdot\\mathbf{b}",
+          "\\boldsymbol{a}\\cdot\\boldsymbol{b}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "向量 a 与向量 b 的点积",
+        "latex": "\\vec{a} \\cdot \\vec{b}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\mathbf{a} \\cdot \\mathbf{b}",
+            "interpretation": "粗体向量记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 702,
+      "firstTokenMs": 398,
+      "finishReason": "stop",
+      "completionTokens": 86,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "zh-11",
+      "category": "zh-desc",
+      "input": "一个二阶矩阵，第一行是1和2，第二行是3和4",
+      "expect": {
+        "status": "ok",
+        "latex": "\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}",
+        "accept": [
+          "\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "矩阵 [[1,2],[3,4]]",
+        "latex": "\\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\begin{bmatrix} 1 & 2 \\\\ 3 & 4 \\end{bmatrix}",
+            "interpretation": "方括号记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 694,
+      "firstTokenMs": 349,
+      "finishReason": "stop",
+      "completionTokens": 106,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "zh-12",
+      "category": "zh-desc",
+      "input": "x大于等于零",
+      "expect": {
+        "status": "ok",
+        "latex": "x\\ge0",
+        "accept": [
+          "x\\geq0",
+          "x\\geqslant0"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 大于等于零",
+        "latex": "x \\ge 0",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "x \\geq 0",
+            "interpretation": "\\geq 写法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 649,
+      "firstTokenMs": 406,
+      "finishReason": "stop",
+      "completionTokens": 71,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "zh-13",
+      "category": "zh-desc",
+      "input": "集合A并集合B",
+      "expect": {
+        "status": "ok",
+        "latex": "A\\cup B"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "集合 A 与集合 B 的并集",
+        "latex": "A \\cup B",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "A \\bigcup B",
+            "interpretation": "大号并集符号"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 508,
+      "firstTokenMs": 353,
+      "finishReason": "stop",
+      "completionTokens": 76,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "zh-14",
+      "category": "zh-desc",
+      "input": "以2为底8的对数",
+      "expect": {
+        "status": "ok",
+        "latex": "\\log_{2}8",
+        "value": "3"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "以 2 为底 8 的对数",
+        "latex": "\\log_{2} 8",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "3"
+        }
+      },
+      "latencyMs": 697,
+      "firstTokenMs": 526,
+      "finishReason": "stop",
+      "completionTokens": 63,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "3",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "zh-15",
+      "category": "zh-desc",
+      "input": "1加二分之一加三分之一一直加到n分之一",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sum_{k=1}^{n}\\frac{1}{k}",
+        "accept": [
+          "1+\\frac{1}{2}+\\frac{1}{3}+\\cdots+\\frac{1}{n}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "从 1 到 n 的调和级数求和",
+        "latex": "1 + \\frac{1}{2} + \\frac{1}{3} + \\cdots + \\frac{1}{n}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\sum_{k=1}^{n} \\frac{1}{k}",
+            "interpretation": "求和号记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 846,
+      "firstTokenMs": 445,
+      "finishReason": "stop",
+      "completionTokens": 112,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string:alt",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "en-01",
+      "category": "en-spoken",
+      "input": "x squared plus y squared equals one",
+      "expect": {
+        "status": "ok",
+        "latex": "x^{2}+y^{2}=1"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 的平方加 y 的平方等于 1",
+        "latex": "x^{2} + y^{2} = 1",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 910,
+      "firstTokenMs": 616,
+      "finishReason": "stop",
+      "completionTokens": 69,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "en-02",
+      "category": "en-spoken",
+      "input": "the integral of e to the minus x squared from minus infinity to infinity",
+      "expect": {
+        "status": "ok",
+        "latex": "\\int_{-\\infty}^{\\infty}e^{-x^{2}}\\,dx",
+        "value": "\\sqrt{\\pi}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "e 的负 x 平方从负无穷到正无穷的积分",
+        "latex": "\\int_{-\\infty}^{\\infty} e^{-x^{2}} \\, dx",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\int_{-\\infty}^{+\\infty} \\exp\\left(-x^{2}\\right) \\, dx",
+            "interpretation": "用 \\exp 与 +\\infty 的写法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "\\sqrt{\\pi}"
+        }
+      },
+      "latencyMs": 940,
+      "firstTokenMs": 457,
+      "finishReason": "stop",
+      "completionTokens": 124,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "\\sqrt{\\pi}",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "en-03",
+      "category": "en-spoken",
+      "input": "sine of x over x",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\frac{\\sin x}{x}",
+        "alternatives": [
+          "\\sin\\left(\\frac{x}{x}\\right)"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "sin x 除以 x",
+        "latex": "\\frac{\\sin x}{x}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 439,
+      "firstTokenMs": 288,
+      "finishReason": "stop",
+      "completionTokens": 59,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": false,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": false,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "en-04",
+      "category": "en-spoken",
+      "input": "limit as x goes to zero of sine x over x",
+      "expect": {
+        "status": "ok",
+        "latex": "\\lim_{x\\to0}\\frac{\\sin x}{x}",
+        "value": "1"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 趋于 0 时 sin x / x 的极限",
+        "latex": "\\lim_{x \\to 0} \\frac{\\sin x}{x}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "1"
+        }
+      },
+      "latencyMs": 787,
+      "firstTokenMs": 546,
+      "finishReason": "stop",
+      "completionTokens": 77,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "1",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "en-05",
+      "category": "en-spoken",
+      "input": "the derivative of f with respect to x",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{df}{dx}",
+        "accept": [
+          "f'(x)",
+          "\\frac{\\mathrm{d}f}{\\mathrm{d}x}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "f 对 x 的导数",
+        "latex": "\\frac{df}{dx}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "f'(x)",
+            "interpretation": "撇号记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 870,
+      "firstTokenMs": 598,
+      "finishReason": "stop",
+      "completionTokens": 74,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "en-06",
+      "category": "en-spoken",
+      "input": "sum from k equals 1 to n of k squared",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sum_{k=1}^{n}k^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "k 从 1 到 n 的 k 平方和",
+        "latex": "\\sum_{k=1}^{n} k^{2}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 552,
+      "firstTokenMs": 245,
+      "finishReason": "stop",
+      "completionTokens": 72,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "en-07",
+      "category": "en-spoken",
+      "input": "square root of x plus one",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\sqrt{x+1}",
+        "alternatives": [
+          "\\sqrt{x}+1"
+        ]
+      },
+      "got": {
+        "status": "ambiguous",
+        "interpretation": "根号下 x 加 1",
+        "latex": "\\sqrt{x+1}",
+        "alternatives": [
+          {
+            "latex": "\\sqrt{x}+1",
+            "interpretation": "根号 x 再加 1"
+          }
+        ],
+        "notations": [],
+        "features": [],
+        "confidence": "medium",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "口语中\"根号下……\"通常作用到后面整段"
+      },
+      "latencyMs": 983,
+      "firstTokenMs": 544,
+      "finishReason": "stop",
+      "completionTokens": 91,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": true,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "en-08",
+      "category": "en-spoken",
+      "input": "a over b plus c",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\frac{a}{b}+c",
+        "alternatives": [
+          "\\frac{a}{b+c}"
+        ]
+      },
+      "got": {
+        "status": "ambiguous",
+        "interpretation": "a 除以 b 再加 c",
+        "latex": "\\frac{a}{b} + c",
+        "alternatives": [
+          {
+            "latex": "\\frac{a}{b+c}",
+            "interpretation": "a 除以 (b 加 c)"
+          }
+        ],
+        "notations": [],
+        "features": [],
+        "confidence": "medium",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "\"over\" 只作用于紧邻的 b"
+      },
+      "latencyMs": 769,
+      "firstTokenMs": 454,
+      "finishReason": "stop",
+      "completionTokens": 92,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": true,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "en-09",
+      "category": "en-spoken",
+      "input": "n choose k",
+      "expect": {
+        "status": "ok",
+        "latex": "\\binom{n}{k}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "从 n 个中取 k 个的组合数",
+        "latex": "\\binom{n}{k}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "C_{n}^{k}",
+            "interpretation": "中文教材常用的组合数记法"
+          },
+          {
+            "latex": "{}_nC_k",
+            "interpretation": "另一种常见记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 911,
+      "firstTokenMs": 559,
+      "finishReason": "stop",
+      "completionTokens": 99,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "en-10",
+      "category": "en-spoken",
+      "input": "the absolute value of x minus 2",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "|x-2|",
+        "alternatives": [
+          "|x|-2"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 减 2 的绝对值",
+        "latex": "\\left| x - 2 \\right|",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\lvert x-2 \\rvert",
+            "interpretation": "用 \u0002lvert/\u0002rvert 的写法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 835,
+      "firstTokenMs": 437,
+      "finishReason": "stop",
+      "completionTokens": 95,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": false,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": false,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sl-01",
+      "category": "sloppy",
+      "input": "limit->0(sinx/x)",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\lim_{x\\to0}\\frac{\\sin x}{x}",
+        "alternatives": [
+          "\\lim_{x\\to0}\\sin\\left(\\frac{x}{x}\\right)"
+        ],
+        "value": "1"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 趋于 0 时 sin x / x 的极限",
+        "latex": "\\lim_{x \\to 0} \\frac{\\sin x}{x}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "1"
+        }
+      },
+      "latencyMs": 627,
+      "firstTokenMs": 377,
+      "finishReason": "stop",
+      "completionTokens": 77,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": false,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": false,
+      "falseAmbiguity": null,
+      "numeric": {
+        "claimed": "1",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "sl-02",
+      "category": "sloppy",
+      "input": "integral_1^2 (x+1)^2 dx",
+      "expect": {
+        "status": "ok",
+        "latex": "\\int_{1}^{2}(x+1)^{2}\\,dx",
+        "value": "19/3"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "(x+1)² 从 1 到 2 的定积分",
+        "latex": "\\int_{1}^{2} (x+1)^{2} \\, dx",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "\\frac{19}{3}"
+        }
+      },
+      "latencyMs": 752,
+      "firstTokenMs": 449,
+      "finishReason": "stop",
+      "completionTokens": 86,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "\\frac{19}{3}",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "sl-03",
+      "category": "sloppy",
+      "input": "sum_{k=1}^n k^2",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sum_{k=1}^{n}k^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "k 从 1 到 n 的 k² 求和",
+        "latex": "\\sum_{k=1}^{n} k^{2}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "结果含变量 n，不给出数值"
+      },
+      "latencyMs": 640,
+      "firstTokenMs": 296,
+      "finishReason": "stop",
+      "completionTokens": 79,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sl-04",
+      "category": "sloppy",
+      "input": "sqrt(x^2+1)",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sqrt{x^{2}+1}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "根号下 x² 加 1",
+        "latex": "\\sqrt{x^{2}+1}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 491,
+      "firstTokenMs": 299,
+      "finishReason": "stop",
+      "completionTokens": 62,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sl-05",
+      "category": "sloppy",
+      "input": "x -> 0",
+      "expect": {
+        "status": "ok",
+        "latex": "x\\to0",
+        "accept": [
+          "x\\rightarrow0"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 趋于 0",
+        "latex": "x \\to 0",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "x \\rightarrow 0",
+            "interpretation": "用 \\rightarrow 代替 \\to"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 854,
+      "firstTokenMs": 572,
+      "finishReason": "stop",
+      "completionTokens": 74,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sl-06",
+      "category": "sloppy",
+      "input": "x >= 0",
+      "expect": {
+        "status": "ok",
+        "latex": "x\\ge0",
+        "accept": [
+          "x\\geq0"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 大于等于 0",
+        "latex": "x \\geq 0",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "x \\ge 0",
+            "interpretation": "\\ge 简写"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 531,
+      "firstTokenMs": 269,
+      "finishReason": "stop",
+      "completionTokens": 73,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sl-07",
+      "category": "sloppy",
+      "input": "pi r^2",
+      "expect": {
+        "status": "ok",
+        "latex": "\\pi r^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "π 乘以 r 的平方",
+        "latex": "\\pi r^{2}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 391,
+      "firstTokenMs": 159,
+      "finishReason": "stop",
+      "completionTokens": 58,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sl-08",
+      "category": "sloppy",
+      "input": "ln x",
+      "expect": {
+        "status": "ok",
+        "latex": "\\ln x"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 的自然对数",
+        "latex": "\\ln x",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\log x",
+            "interpretation": "以 e 为底的对数（部分教材用 log 表示自然对数）"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 926,
+      "firstTokenMs": 591,
+      "finishReason": "stop",
+      "completionTokens": 79,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sl-09",
+      "category": "sloppy",
+      "input": "e^{i pi} + 1 = 0",
+      "expect": {
+        "status": "ok",
+        "latex": "e^{i\\pi}+1=0"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "欧拉恒等式 e^{iπ} + 1 = 0",
+        "latex": "e^{i\\pi} + 1 = 0",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 580,
+      "firstTokenMs": 371,
+      "finishReason": "stop",
+      "completionTokens": 72,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sl-10",
+      "category": "sloppy",
+      "input": "d/dx x^2",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{d}{dx}x^{2}",
+        "accept": [
+          "\\frac{d}{dx}\\left(x^{2}\\right)",
+          "\\frac{\\mathrm{d}}{\\mathrm{d}x}x^{2}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "对 x² 关于 x 求导",
+        "latex": "\\frac{d}{dx} x^{2}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\frac{d}{dx}\\left(x^{2}\\right)",
+            "interpretation": "用括号包住被求导的式子"
+          },
+          {
+            "latex": "(x^{2})'",
+            "interpretation": "撇号记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 808,
+      "firstTokenMs": 448,
+      "finishReason": "stop",
+      "completionTokens": 111,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sl-11",
+      "category": "sloppy",
+      "input": "int_0^1 x dx",
+      "expect": {
+        "status": "ok",
+        "latex": "\\int_{0}^{1}x\\,dx",
+        "value": "1/2"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 从 0 到 1 的定积分",
+        "latex": "\\int_{0}^{1} x \\, dx",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "\\frac{1}{2}"
+        }
+      },
+      "latencyMs": 793,
+      "firstTokenMs": 524,
+      "finishReason": "stop",
+      "completionTokens": 75,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "\\frac{1}{2}",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "sl-12",
+      "category": "sloppy",
+      "input": "lim_{n->inf} (1+1/n)^n",
+      "expect": {
+        "status": "ok",
+        "latex": "\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n}",
+        "value": "e"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "n 趋于无穷时 (1+1/n)^n 的极限",
+        "latex": "\\lim_{n \\to \\infty} \\left(1 + \\frac{1}{n}\\right)^{n}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "e"
+        }
+      },
+      "latencyMs": 570,
+      "firstTokenMs": 254,
+      "finishReason": "stop",
+      "completionTokens": 85,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "e",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "sl-13",
+      "category": "sloppy",
+      "input": "sin^2 x + cos^2 x = 1",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sin^{2}x+\\cos^{2}x=1"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "正弦平方加余弦平方等于 1",
+        "latex": "\\sin^{2} x + \\cos^{2} x = 1",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "(\\sin x)^{2} + (\\cos x)^{2} = 1",
+            "interpretation": "把平方写在括号外"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 865,
+      "firstTokenMs": 451,
+      "finishReason": "stop",
+      "completionTokens": 99,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sl-14",
+      "category": "sloppy",
+      "input": "a_n = a_{n-1} + a_{n-2}",
+      "expect": {
+        "status": "ok",
+        "latex": "a_{n}=a_{n-1}+a_{n-2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "递推数列：第 n 项等于前两项之和",
+        "latex": "a_{n} = a_{n-1} + a_{n-2}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 575,
+      "firstTokenMs": 248,
+      "finishReason": "stop",
+      "completionTokens": 75,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sl-15",
+      "category": "sloppy",
+      "input": "abc",
+      "expect": {
+        "status": "ok",
+        "latex": "abc"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "三个变量 a、b、c 相乘",
+        "latex": "abc",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "a \\cdot b \\cdot c",
+            "interpretation": "显式写出乘号"
+          }
+        ],
+        "features": [],
+        "confidence": "medium",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "也可能只是三个并列的字母，按惯例理解为乘积"
+      },
+      "latencyMs": 811,
+      "firstTokenMs": 464,
+      "finishReason": "stop",
+      "completionTokens": 84,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "mx-01",
+      "category": "mixed",
+      "input": "用分数写 x 除以 y",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{x}{y}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "用分数形式表示 x 除以 y",
+        "latex": "\\frac{x}{y}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "x/y",
+            "interpretation": "斜杠记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 644,
+      "firstTokenMs": 408,
+      "finishReason": "stop",
+      "completionTokens": 72,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "mx-02",
+      "category": "mixed",
+      "input": "x 的 n 次方 over n factorial",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{x^{n}}{n!}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 的 n 次方除以 n 的阶乘",
+        "latex": "\\frac{x^{n}}{n!}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 476,
+      "firstTokenMs": 214,
+      "finishReason": "stop",
+      "completionTokens": 67,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "mx-03",
+      "category": "mixed",
+      "input": "求 sin x 从 0 到 pi 的积分",
+      "expect": {
+        "status": "ok",
+        "latex": "\\int_{0}^{\\pi}\\sin x\\,dx",
+        "value": "2"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "sin x 从 0 到 π 的定积分",
+        "latex": "\\int_{0}^{\\pi} \\sin x \\, dx",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "2"
+        }
+      },
+      "latencyMs": 732,
+      "firstTokenMs": 492,
+      "finishReason": "stop",
+      "completionTokens": 72,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "2",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "mx-04",
+      "category": "mixed",
+      "input": "矩阵 [[1,2],[3,4]] 的行列式",
+      "expect": {
+        "status": "ok",
+        "latex": "\\det\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}",
+        "accept": [
+          "\\begin{vmatrix}1&2\\\\3&4\\end{vmatrix}"
+        ],
+        "value": "-2"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "矩阵 [[1,2],[3,4]] 的行列式",
+        "latex": "\\begin{vmatrix} 1 & 2 \\\\ 3 & 4 \\end{vmatrix}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\det\\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}",
+            "interpretation": "用 det 记号写同一个行列式"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "-2"
+        }
+      },
+      "latencyMs": 748,
+      "firstTokenMs": 415,
+      "finishReason": "stop",
+      "completionTokens": 119,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "structural",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "-2",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "mx-05",
+      "category": "mixed",
+      "input": "P(A|B) = P(B|A)P(A)/P(B)",
+      "expect": {
+        "status": "ok",
+        "latex": "P(A\\mid B)=\\frac{P(B\\mid A)P(A)}{P(B)}",
+        "accept": [
+          "P(A|B)=\\frac{P(B|A)P(A)}{P(B)}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "贝叶斯公式：在 B 发生的条件下 A 的条件概率",
+        "latex": "P(A \\mid B) = \\frac{P(B \\mid A) P(A)}{P(B)}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "P\\left(A\\middle|B\\right) = \\frac{P\\left(B\\middle|A\\right) P(A)}{P(B)}",
+            "interpretation": "用 \\left|\\right 自动调整竖线高度"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 755,
+      "firstTokenMs": 296,
+      "finishReason": "stop",
+      "completionTokens": 130,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "bd-01",
+      "category": "boundary",
+      "input": "画一个 A 到 B 的交换图",
+      "expect": {
+        "status": "unsupported",
+        "features": [
+          "tikz-cd"
+        ]
+      },
+      "got": {
+        "status": "unsupported",
+        "interpretation": "画一个从 A 到 B 的交换图",
+        "latex": "",
+        "alternatives": [],
+        "notations": [],
+        "features": [
+          "tikz-cd"
+        ],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "交换图需要 tikz-cd 等绘图宏包，本编辑器不支持"
+      },
+      "latencyMs": 756,
+      "firstTokenMs": 465,
+      "finishReason": "stop",
+      "completionTokens": 77,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "bd-02",
+      "category": "boundary",
+      "input": "用 tikz 画一个单位圆",
+      "expect": {
+        "status": "unsupported",
+        "features": [
+          "tikz"
+        ]
+      },
+      "got": {
+        "status": "unsupported",
+        "interpretation": "用 TikZ 画单位圆",
+        "latex": "",
+        "alternatives": [],
+        "notations": [],
+        "features": [
+          "tikz"
+        ],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "需要 tikz"
+      },
+      "latencyMs": 572,
+      "firstTokenMs": 288,
+      "finishReason": "stop",
+      "completionTokens": 58,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "bd-03",
+      "category": "boundary",
+      "input": "3 米每秒，用 siunitx 写",
+      "expect": {
+        "status": "unsupported",
+        "features": [
+          "siunitx"
+        ]
+      },
+      "got": {
+        "status": "unsupported",
+        "interpretation": "3 米每秒，用 siunitx 的 \\qty 写法",
+        "latex": "",
+        "alternatives": [],
+        "notations": [],
+        "features": [
+          "siunitx"
+        ],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "需要 siunitx"
+      },
+      "latencyMs": 750,
+      "firstTokenMs": 442,
+      "finishReason": "stop",
+      "completionTokens": 69,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "nm-01",
+      "category": "not-math",
+      "input": "今天天气不错",
+      "expect": {
+        "status": "not_math"
+      },
+      "got": {
+        "status": "not_math",
+        "interpretation": "",
+        "latex": "",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "不是数学内容"
+      },
+      "latencyMs": 477,
+      "firstTokenMs": 317,
+      "finishReason": "stop",
+      "completionTokens": 49,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "nm-02",
+      "category": "not-math",
+      "input": "帮我写一封邮件给老师",
+      "expect": {
+        "status": "not_math"
+      },
+      "got": {
+        "status": "not_math",
+        "interpretation": "",
+        "latex": "",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "不是数学内容"
+      },
+      "latencyMs": 775,
+      "firstTokenMs": 592,
+      "finishReason": "stop",
+      "completionTokens": 49,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sc-01",
+      "category": "scope",
+      "input": "根号下x的平方加y的平方",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sqrt{x^{2}+y^{2}}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 的平方加 y 的平方的平方根",
+        "latex": "\\sqrt{x^{2}+y^{2}}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 547,
+      "firstTokenMs": 257,
+      "finishReason": "stop",
+      "completionTokens": 67,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sc-02",
+      "category": "scope",
+      "input": "三次根号下x加8",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\sqrt[3]{x+8}",
+        "alternatives": [
+          "\\sqrt[3]{x}+8"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x+8 的立方根",
+        "latex": "\\sqrt[3]{x+8}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 930,
+      "firstTokenMs": 680,
+      "finishReason": "stop",
+      "completionTokens": 61,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": false,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": false,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sc-03",
+      "category": "scope",
+      "input": "根号x加1",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\sqrt{x}+1",
+        "alternatives": [
+          "\\sqrt{x+1}"
+        ]
+      },
+      "got": {
+        "status": "ambiguous",
+        "interpretation": "根号下 x 加 1",
+        "latex": "\\sqrt{x+1}",
+        "alternatives": [
+          {
+            "latex": "\\sqrt{x}+1",
+            "interpretation": "根号 x 再加 1"
+          }
+        ],
+        "notations": [],
+        "features": [],
+        "confidence": "medium",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "口述中\"根号\"通常覆盖后面整段"
+      },
+      "latencyMs": 996,
+      "firstTokenMs": 739,
+      "finishReason": "stop",
+      "completionTokens": 89,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string:model-alt",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": true,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sc-04",
+      "category": "scope",
+      "input": "the square root of b squared minus four a c",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sqrt{b^{2}-4ac}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "根号下 b 平方减 4ac",
+        "latex": "\\sqrt{b^{2}-4ac}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 706,
+      "firstTokenMs": 460,
+      "finishReason": "stop",
+      "completionTokens": 64,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sc-05",
+      "category": "scope",
+      "input": "x减y的绝对值",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "|x-y|",
+        "alternatives": [
+          "x-|y|"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 减 y 的绝对值",
+        "latex": "\\left| x - y \\right|",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\lvert x-y \\rvert",
+            "interpretation": "用 \\lvert \\rvert 的写法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 541,
+      "firstTokenMs": 234,
+      "finishReason": "stop",
+      "completionTokens": 86,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": false,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": false,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sc-06",
+      "category": "scope",
+      "input": "e的x加1次方",
+      "expect": {
+        "status": "ok",
+        "latex": "e^{x+1}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "e 的 x+1 次方",
+        "latex": "e^{x+1}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\exp(x+1)",
+            "interpretation": "用 exp 函数记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 780,
+      "firstTokenMs": 441,
+      "finishReason": "stop",
+      "completionTokens": 79,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "sc-07",
+      "category": "scope",
+      "input": "one over x plus one",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\frac{1}{x}+1",
+        "alternatives": [
+          "\\frac{1}{x+1}"
+        ]
+      },
+      "got": {
+        "status": "ambiguous",
+        "interpretation": "1 除以 x 再加 1",
+        "latex": "\\frac{1}{x} + 1",
+        "alternatives": [
+          {
+            "latex": "\\frac{1}{x+1}",
+            "interpretation": "1 除以 (x+1)"
+          }
+        ],
+        "notations": [],
+        "features": [],
+        "confidence": "medium",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "口语中 \"one over x plus one\" 两种读法都常见"
+      },
+      "latencyMs": 1036,
+      "firstTokenMs": 655,
+      "finishReason": "stop",
+      "completionTokens": 101,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": true,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "ctx-01",
+      "category": "context",
+      "input": "f对x的导数",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{\\mathrm{d}f}{\\mathrm{d}x}",
+        "pattern": "\\\\mathrm\\{d\\}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "f 对 x 的导数",
+        "latex": "\\frac{\\mathrm{d}f}{\\mathrm{d}x}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "f'(x)",
+            "interpretation": "撇号记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "沿用本页已用的 \\mathrm{d} 记号"
+      },
+      "latencyMs": 555,
+      "firstTokenMs": 239,
+      "finishReason": "stop",
+      "completionTokens": 90,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "ctx-02",
+      "category": "context",
+      "input": "x的平方从0到1的积分",
+      "expect": {
+        "status": "ok",
+        "latex": "\\int_{0}^{1}x^{2}\\,\\mathrm{d}x",
+        "pattern": "\\\\mathrm\\{d\\}x",
+        "value": "1/3"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x² 从 0 到 1 的定积分",
+        "latex": "\\int_{0}^{1} x^{2} \\,\\mathrm{d}x",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "\\frac{1}{3}"
+        }
+      },
+      "latencyMs": 631,
+      "firstTokenMs": 353,
+      "finishReason": "stop",
+      "completionTokens": 82,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "\\frac{1}{3}",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "ctx-03",
+      "category": "context",
+      "input": "向量u加向量v",
+      "expect": {
+        "status": "ok",
+        "latex": "\\mathbf{u}+\\mathbf{v}",
+        "pattern": "\\\\mathbf\\{u\\}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "向量 u 加向量 v",
+        "latex": "\\mathbf{u} + \\mathbf{v}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\vec{u} + \\vec{v}",
+            "interpretation": "箭头记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 910,
+      "firstTokenMs": 589,
+      "finishReason": "stop",
+      "completionTokens": 79,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "ctx-04",
+      "category": "context",
+      "input": "它的导数",
+      "expect": {
+        "status": "ok",
+        "latex": "g'(t)",
+        "accept": [
+          "\\frac{dg}{dt}",
+          "\\frac{d}{dt}g(t)",
+          "g'(t)=3t^{2}",
+          "\\frac{dg}{dt}=3t^{2}",
+          "3t^{2}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "g(t)=t³+1 的导数",
+        "latex": "g'(t) = 3t^{2}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\frac{dg}{dt} = 3t^{2}",
+            "interpretation": "莱布尼茨记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 740,
+      "firstTokenMs": 410,
+      "finishReason": "stop",
+      "completionTokens": 93,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string:alt",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "ctx-05",
+      "category": "context",
+      "input": "第 n 项等于前一项的两倍",
+      "expect": {
+        "status": "ok",
+        "latex": "a_{n}=2a_{n-1}",
+        "accept": [
+          "a_{n+1}=2a_{n}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "数列满足递推关系 a_n = 2a_{n-1}",
+        "latex": "a_{n} = 2a_{n-1}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 736,
+      "firstTokenMs": 514,
+      "finishReason": "stop",
+      "completionTokens": 74,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "cv-01",
+      "category": "convert",
+      "input": "设 x 的平方加 y 的平方等于 1",
+      "expect": {
+        "status": "ok",
+        "latex": "x^{2}+y^{2}=1"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "设 x 的平方加 y 的平方等于 1",
+        "latex": "x^{2} + y^{2} = 1",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 664,
+      "firstTokenMs": 388,
+      "finishReason": "stop",
+      "completionTokens": 70,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "cv-02",
+      "category": "convert",
+      "input": "当 n 趋于无穷时 1/n 趋于 0",
+      "expect": {
+        "status": "ok",
+        "latex": "\\lim_{n\\to\\infty}\\frac{1}{n}=0",
+        "accept": [
+          "\\frac{1}{n}\\to0(n\\to\\infty)",
+          "\\frac{1}{n}\\to0,n\\to\\infty"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "当 n 趋于无穷时，1/n 趋于 0",
+        "latex": "\\lim_{n \\to \\infty} \\frac{1}{n} = 0",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "0"
+        }
+      },
+      "latencyMs": 696,
+      "firstTokenMs": 405,
+      "finishReason": "stop",
+      "completionTokens": 77,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "0",
+        "claimedOk": null,
+        "evaluatedOk": null,
+        "hostCheck": null
+      },
+      "pass": true
+    },
+    {
+      "id": "cv-03",
+      "category": "convert",
+      "input": "a 与 b 的算术平均数不小于几何平均数",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{a+b}{2}\\ge\\sqrt{ab}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "a 与 b 的算术平均数不小于几何平均数",
+        "latex": "\\frac{a+b}{2} \\ge \\sqrt{ab}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "默认 a,b \\ge 0"
+      },
+      "latencyMs": 665,
+      "firstTokenMs": 427,
+      "finishReason": "stop",
+      "completionTokens": 76,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "cv-04",
+      "category": "convert",
+      "input": "下周三之前交第三章的作业",
+      "expect": {
+        "status": "not_math"
+      },
+      "got": {
+        "status": "not_math",
+        "interpretation": "",
+        "latex": "",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "不是数学内容"
+      },
+      "latencyMs": 589,
+      "firstTokenMs": 414,
+      "finishReason": "stop",
+      "completionTokens": 49,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "ml-01",
+      "category": "multiline",
+      "input": "分段函数：x 大于等于 0 时等于 x，x 小于 0 时等于负 x",
+      "expect": {
+        "status": "ok",
+        "pattern": "\\\\begin\\{cases\\}.*-x.*\\\\end\\{cases\\}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "分段函数：x ≥ 0 时取 x，x < 0 时取 -x",
+        "latex": "f(x) = \\begin{cases} x, & x \\ge 0 \\\\ -x, & x < 0 \\end{cases}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "f(x) = |x|",
+            "interpretation": "该分段函数即绝对值函数"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 865,
+      "firstTokenMs": 375,
+      "finishReason": "stop",
+      "completionTokens": 116,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "ml-02",
+      "category": "multiline",
+      "input": "方程组：x 加 y 等于 3，x 减 y 等于 1",
+      "expect": {
+        "status": "ok",
+        "pattern": "\\\\begin\\{(cases|aligned|gathered|array)\\}.*x\\+y&?=&?3.*x-y&?=&?1"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "方程组：x + y = 3 且 x − y = 1",
+        "latex": "\\begin{cases} x + y = 3 \\\\ x - y = 1 \\end{cases}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 656,
+      "firstTokenMs": 171,
+      "finishReason": "stop",
+      "completionTokens": 83,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "ml-03",
+      "category": "multiline",
+      "input": "用 align 环境写两行：a 等于 b，b 等于 c",
+      "expect": {
+        "status": "ok",
+        "pattern": "\\\\begin\\{(aligned|gathered)\\}.*a&?=&?b.*b&?=&?c"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "两行等式：a = b 与 b = c，用可对齐的多行环境排版",
+        "latex": "\\begin{aligned} a &= b \\\\ b &= c \\end{aligned}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "align 只能在块级使用，已改用行内也可渲染的 aligned"
+      },
+      "latencyMs": 1123,
+      "firstTokenMs": 696,
+      "finishReason": "stop",
+      "completionTokens": 95,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "kr-01",
+      "category": "katex-risk",
+      "input": "x 的绝对值，用 physics 宏包写",
+      "expect": {
+        "status": "ok",
+        "latex": "|x|"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 的绝对值",
+        "latex": "\\left| x \\right|",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "|x|",
+            "interpretation": "简单竖线写法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "physics 的 \\abs 已改写为 KaTeX 原生写法"
+      },
+      "latencyMs": 967,
+      "firstTokenMs": 650,
+      "finishReason": "stop",
+      "completionTokens": 83,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "kr-02",
+      "category": "katex-risk",
+      "input": "向量 v 的范数，用 physics 的 norm 命令",
+      "expect": {
+        "status": "ok",
+        "pattern": "(\\\\\\||\\\\lVert|\\\\Vert)"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "向量 v 的范数",
+        "latex": "\\left\\| \\mathbf{v} \\right\\|",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\| \\vec{v} \\|",
+            "interpretation": "用箭头表示向量"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "physics 的 \\norm 已改写为 KaTeX 原生写法"
+      },
+      "latencyMs": 1100,
+      "firstTokenMs": 745,
+      "finishReason": "stop",
+      "completionTokens": 95,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "kr-03",
+      "category": "katex-risk",
+      "input": "f 对 x 的导数，用 physics 的 dv 写",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{df}{dx}",
+        "accept": [
+          "\\frac{d}{dx}f"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "f 对 x 的导数，用 physics 宏包的 \\dv 写法，这里改写为 KaTeX 原生写法",
+        "latex": "\\frac{df}{dx}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "f'(x)",
+            "interpretation": "撇号记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "\\dv 已按规则改写为 \\frac{df}{dx}"
+      },
+      "latencyMs": 1001,
+      "firstTokenMs": 525,
+      "finishReason": "stop",
+      "completionTokens": 112,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "kr-04",
+      "category": "katex-risk",
+      "input": "矩阵 A 的迹，用 DeclareMathOperator 定义 tr",
+      "expect": {
+        "status": "ok",
+        "pattern": "(\\\\operatorname\\{[tT]r\\}|\\\\mathrm\\{[tT]r\\}|\\\\text\\{[tT]r\\}).*A"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "矩阵 A 的迹，用 \\operatorname{tr} 表示",
+        "latex": "\\operatorname{tr} A",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\operatorname{tr}(A)",
+            "interpretation": "带括号的写法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "已按 KaTeX 原生写法改写，无需 \\DeclareMathOperator"
+      },
+      "latencyMs": 832,
+      "firstTokenMs": 451,
+      "finishReason": "stop",
+      "completionTokens": 97,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "kr-05",
+      "category": "katex-risk",
+      "input": "用 qty 自动调整括号，写 (x+1)/2 的平方",
+      "expect": {
+        "status": "ok",
+        "latex": "\\left(\\frac{x+1}{2}\\right)^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "用自动调整大小的括号写出 (x+1)/2 的平方",
+        "latex": "\\left( \\frac{x+1}{2} \\right)^{2}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "physics 的 \\qty 已改写为 KaTeX 原生的 \\left( \\right)"
+      },
+      "latencyMs": 779,
+      "firstTokenMs": 242,
+      "finishReason": "stop",
+      "completionTokens": 134,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "rt-01",
+      "category": "retry",
+      "input": "二分之一",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{1}{2}",
+        "value": "1/2"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "二分之一",
+        "latex": "\\frac{1}{2}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "\\frac{1}{2}"
+        },
+        "notes": "补上了缺失的右花括号"
+      },
+      "latencyMs": 730,
+      "firstTokenMs": 479,
+      "finishReason": "stop",
+      "completionTokens": 66,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": {
+        "claimed": "\\frac{1}{2}",
+        "claimedOk": true,
+        "evaluatedOk": true,
+        "hostCheck": true
+      },
+      "pass": true
+    },
+    {
+      "id": "rt-02",
+      "category": "retry",
+      "input": "x 的绝对值",
+      "expect": {
+        "status": "ok",
+        "latex": "|x|"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 的绝对值",
+        "latex": "\\left| x \\right|",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "|x|",
+            "interpretation": "简写形式"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "\\abs 属于 physics 宏包，已改写为 KaTeX 原生写法"
+      },
+      "latencyMs": 737,
+      "firstTokenMs": 510,
+      "finishReason": "stop",
+      "completionTokens": 85,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "rt-03",
+      "category": "retry",
+      "input": "两行等式：a 等于 b，b 等于 c",
+      "expect": {
+        "status": "ok",
+        "pattern": "\\\\begin\\{(aligned|gathered)\\}.*a&?=&?b.*b&?=&?c"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "两行等式：a 等于 b，b 等于 c",
+        "latex": "\\begin{aligned} a &= b \\\\ b &= c \\end{aligned}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "改用 aligned，行内行间均可渲染"
+      },
+      "latencyMs": 565,
+      "firstTokenMs": 215,
+      "finishReason": "stop",
+      "completionTokens": 82,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "rt-04",
+      "category": "retry",
+      "input": "f 对 x 的导数",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{df}{dx}",
+        "accept": [
+          "f'(x)",
+          "\\frac{d}{dx}f"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "f 对 x 的导数",
+        "latex": "\\frac{df}{dx}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "f'(x)",
+            "interpretation": "撇号记法"
+          },
+          {
+            "latex": "\\dot{f}",
+            "interpretation": "牛顿点记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "\\dv 属于 physics 宏包，已改写为 KaTeX 原生写法"
+      },
+      "latencyMs": 832,
+      "firstTokenMs": 397,
+      "finishReason": "stop",
+      "completionTokens": 106,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "rt-05",
+      "category": "retry",
+      "input": "矩阵 A 的迹",
+      "expect": {
+        "status": "ok",
+        "pattern": "(\\\\operatorname\\{[tT]r\\}|\\\\mathrm\\{[tT]r\\}|\\\\text\\{[tT]r\\}).*A"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "矩阵 A 的迹",
+        "latex": "\\operatorname{tr}(A)",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\operatorname{Tr}(A)",
+            "interpretation": "大写 Tr 记法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "\\DeclareMathOperator 不被支持，改用 \\operatorname"
+      },
+      "latencyMs": 885,
+      "firstTokenMs": 541,
+      "finishReason": "stop",
+      "completionTokens": 87,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "rt-06",
+      "category": "retry",
+      "input": "画 A 到 B 的交换图",
+      "expect": {
+        "status": "unsupported",
+        "features": [
+          "tikz-cd"
+        ]
+      },
+      "got": {
+        "status": "unsupported",
+        "interpretation": "画 A 到 B 的交换图",
+        "latex": "",
+        "alternatives": [],
+        "notations": [],
+        "features": [
+          "tikz-cd"
+        ],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "交换图需要 tikz-cd，本编辑器不支持"
+      },
+      "latencyMs": 655,
+      "firstTokenMs": 345,
+      "finishReason": "stop",
+      "completionTokens": 70,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": null,
+      "numeric": null,
+      "pass": true
+    }
+  ],
+  "edits": [
+    {
+      "id": "ed-01",
+      "category": "edit",
+      "instruction": "把分母改成 x+3",
+      "expect": {
+        "status": "ok",
+        "latex": "x+3"
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "x+3",
+        "interpretation": "将分母中的 x 改为 x+3。",
+        "confidence": "high"
+      },
+      "latencyMs": 791,
+      "firstTokenMs": 606,
+      "finishReason": "stop",
+      "completionTokens": 32,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-02",
+      "category": "edit",
+      "instruction": "改成立方",
+      "expect": {
+        "status": "ok",
+        "latex": "x^{3}"
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "x^{3}",
+        "interpretation": "将 x 的指数从 2 改为 3，即改成立方。",
+        "confidence": "high"
+      },
+      "latencyMs": 834,
+      "firstTokenMs": 597,
+      "finishReason": "stop",
+      "completionTokens": 45,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-03",
+      "category": "edit",
+      "instruction": "上限改成无穷",
+      "expect": {
+        "status": "ok",
+        "latex": "\\infty",
+        "accept": [
+          "+\\infty"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "\\infty",
+        "interpretation": "将积分上限从 1 改为无穷大。",
+        "confidence": "high"
+      },
+      "latencyMs": 575,
+      "firstTokenMs": 414,
+      "finishReason": "stop",
+      "completionTokens": 32,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-04",
+      "category": "edit",
+      "instruction": "把 sin 换成 cos",
+      "expect": {
+        "status": "ok",
+        "latex": "\\cos x"
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "\\cos x",
+        "interpretation": "将选中的 \\sin x 替换为 \\cos x。",
+        "confidence": "high"
+      },
+      "latencyMs": 618,
+      "firstTokenMs": 438,
+      "finishReason": "stop",
+      "completionTokens": 42,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-05",
+      "category": "edit",
+      "instruction": "加上绝对值",
+      "expect": {
+        "status": "ok",
+        "latex": "|x-1|"
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "\\left|x-1\\right|",
+        "interpretation": "给选中的 x-1 加上绝对值，变为 |x-1|。",
+        "confidence": "high"
+      },
+      "latencyMs": 690,
+      "firstTokenMs": 502,
+      "finishReason": "stop",
+      "completionTokens": 44,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-06",
+      "category": "edit",
+      "instruction": "写成向量",
+      "expect": {
+        "status": "ok",
+        "latex": "\\vec{a}",
+        "accept": [
+          "\\mathbf{a}",
+          "\\boldsymbol{a}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "\\vec{a}",
+        "interpretation": "将标量 a 改写为向量 \\vec{a}",
+        "confidence": "high"
+      },
+      "latencyMs": 662,
+      "firstTokenMs": 462,
+      "finishReason": "stop",
+      "completionTokens": 40,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-07",
+      "category": "edit",
+      "instruction": "写成求和符号",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sum_{k=1}^{n}k",
+        "accept": [
+          "\\sum_{i=1}^{n}i",
+          "\\sum_{j=1}^{n}j"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "\\sum_{k=1}^{n} k",
+        "interpretation": "将左侧的 1+2+\\cdots+n 改写为求和符号形式 \\sum_{k=1}^{n} k。",
+        "confidence": "high"
+      },
+      "latencyMs": 1122,
+      "firstTokenMs": 547,
+      "finishReason": "stop",
+      "completionTokens": 62,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-08",
+      "category": "edit",
+      "instruction": "展开",
+      "expect": {
+        "status": "ok",
+        "latex": "a^{2}+2ab+b^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "a^{2}+2ab+b^{2}",
+        "interpretation": "将 (a+b)^2 展开为 a^2+2ab+b^2。",
+        "confidence": "high"
+      },
+      "latencyMs": 825,
+      "firstTokenMs": 583,
+      "finishReason": "stop",
+      "completionTokens": 48,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-09",
+      "category": "edit",
+      "instruction": "化简",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{x}{2}"
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "\\frac{x}{2}",
+        "interpretation": "将分数 2x/4 化简为 x/2。",
+        "confidence": "high"
+      },
+      "latencyMs": 626,
+      "firstTokenMs": 451,
+      "finishReason": "stop",
+      "completionTokens": 39,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-10",
+      "category": "edit",
+      "instruction": "换成偏导",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{\\partial f}{\\partial x}"
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "\\frac{\\partial f}{\\partial x}",
+        "interpretation": "将全导数符号改为偏导数符号，即把 d 换成 \\partial。",
+        "confidence": "high"
+      },
+      "latencyMs": 628,
+      "firstTokenMs": 396,
+      "finishReason": "stop",
+      "completionTokens": 47,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-11",
+      "category": "edit",
+      "instruction": "make it the square root",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sqrt{x+1}"
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "\\sqrt{x+1}",
+        "interpretation": "将选中的 x+1 改为其平方根形式。",
+        "confidence": "high"
+      },
+      "latencyMs": 648,
+      "firstTokenMs": 450,
+      "finishReason": "stop",
+      "completionTokens": 42,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-12",
+      "category": "edit",
+      "instruction": "指数加一",
+      "expect": {
+        "status": "ok",
+        "latex": "x+1"
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "x+1",
+        "interpretation": "将指数 x 加一，改为 x+1。",
+        "confidence": "high"
+      },
+      "latencyMs": 459,
+      "firstTokenMs": 285,
+      "finishReason": "stop",
+      "completionTokens": 41,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-13",
+      "category": "edit",
+      "instruction": "change the lower limit to minus infinity",
+      "expect": {
+        "status": "ok",
+        "latex": "-\\infty"
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "-\\infty",
+        "interpretation": "将积分下限从 0 改为负无穷。",
+        "confidence": "high"
+      },
+      "latencyMs": 721,
+      "firstTokenMs": 566,
+      "finishReason": "stop",
+      "completionTokens": 39,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-14",
+      "category": "edit-scope",
+      "instruction": "改成趋于无穷",
+      "expect": {
+        "status": "ok",
+        "latex": "\\infty",
+        "accept": [
+          "+\\infty"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "\\infty",
+        "interpretation": "将极限下标中的 0 改为趋于无穷，即 x 趋于无穷。",
+        "confidence": "high"
+      },
+      "latencyMs": 490,
+      "firstTokenMs": 246,
+      "finishReason": "stop",
+      "completionTokens": 38,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-15",
+      "category": "edit-scope",
+      "instruction": "分子分母对调",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{b}{a}"
+      },
+      "got": {
+        "status": "ok",
+        "replacementLatex": "\\frac{b}{a}",
+        "interpretation": "将分数 \\frac{a}{b} 的分子分母对调，得到 \\frac{b}{a}。",
+        "confidence": "high"
+      },
+      "latencyMs": 651,
+      "firstTokenMs": 479,
+      "finishReason": "stop",
+      "completionTokens": 48,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "pass": true
+    },
+    {
+      "id": "ed-16",
+      "category": "edit-boundary",
+      "instruction": "嗯……",
+      "expect": {
+        "status": "unclear"
+      },
+      "got": {
+        "status": "unclear",
+        "replacementLatex": "x^{2}",
+        "interpretation": "指令不明确，未做任何修改。",
+        "confidence": "high"
+      },
+      "latencyMs": 469,
+      "firstTokenMs": 291,
+      "finishReason": "stop",
+      "completionTokens": 37,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "pass": true
+    },
+    {
+      "id": "ed-17",
+      "category": "edit-boundary",
+      "instruction": "把这里画成交换图",
+      "expect": {
+        "status": "unsupported"
+      },
+      "got": {
+        "status": "unsupported",
+        "replacementLatex": "A\\to B",
+        "interpretation": "无法把箭头表达式 A\\to B 直接改写为交换图，交换图需要 xymatrix、tikz-cd 等绘图环境，不属于单个公式片段可替换的构造。",
+        "confidence": "high"
+      },
+      "latencyMs": 745,
+      "firstTokenMs": 393,
+      "finishReason": "stop",
+      "completionTokens": 69,
+      "jsonOk": true,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "pass": true
+    }
+  ]
+}

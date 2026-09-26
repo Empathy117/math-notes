@@ -1,0 +1,1504 @@
+{
+  "model": "deepseek-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "outcomes": [
+    {
+      "id": "zh-01",
+      "category": "zh-desc",
+      "input": "(x+1)^2从1到2的定积分",
+      "expect": {
+        "status": "ok",
+        "latex": "\\int_{1}^{2}(x+1)^{2}\\,dx",
+        "value": "19/3"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "(x+1)² 从 1 到 2 的定积分",
+        "latex": "\\int_{1}^{2} (x+1)^{2} \\, dx",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "19/3"
+        }
+      },
+      "latencyMs": 1045,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-02",
+      "category": "zh-desc",
+      "input": "x的平方",
+      "expect": {
+        "status": "ok",
+        "latex": "x^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 的平方",
+        "latex": "x^{2}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 649,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-03",
+      "category": "zh-desc",
+      "input": "三分之二",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{2}{3}",
+        "value": "2/3"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "三分之二",
+        "latex": "\\frac{2}{3}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "2/3"
+        }
+      },
+      "latencyMs": 793,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-04",
+      "category": "zh-desc",
+      "input": "根号下x加1",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\sqrt{x+1}",
+        "alternatives": [
+          "\\sqrt{x}+1"
+        ]
+      },
+      "got": {
+        "status": "ambiguous",
+        "interpretation": "根号下 (x 加 1)，即 √(x+1)",
+        "latex": "\\sqrt{x+1}",
+        "alternatives": [
+          {
+            "latex": "\\sqrt{x}+1",
+            "interpretation": "先对 x 开平方，再加 1"
+          }
+        ],
+        "features": [],
+        "confidence": "medium",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "中文口语常指整体开方，但也可理解为根号只作用于 x"
+      },
+      "latencyMs": 1261,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": true,
+      "pass": true
+    },
+    {
+      "id": "zh-05",
+      "category": "zh-desc",
+      "input": "e的x次方",
+      "expect": {
+        "status": "ok",
+        "latex": "e^{x}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "e 的 x 次方",
+        "latex": "e^{x}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 531,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-06",
+      "category": "zh-desc",
+      "input": "n的阶乘",
+      "expect": {
+        "status": "ok",
+        "latex": "n!"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "n 的阶乘",
+        "latex": "n!",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1000,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-07",
+      "category": "zh-desc",
+      "input": "从1到n对k的平方求和",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sum_{k=1}^{n}k^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "从 1 到 n 对 k 的平方求和",
+        "latex": "\\sum_{k=1}^{n} k^{2}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "虽为有限和但含符号 n，无法给出具体数值"
+      },
+      "latencyMs": 666,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-08",
+      "category": "zh-desc",
+      "input": "x趋于0时sinx比x的极限",
+      "expect": {
+        "status": "ok",
+        "latex": "\\lim_{x\\to0}\\frac{\\sin x}{x}",
+        "value": "1"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 趋于 0 时 sin(x)/x 的极限",
+        "latex": "\\lim_{x \\to 0} \\frac{\\sin x}{x}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "1"
+        }
+      },
+      "latencyMs": 1226,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-09",
+      "category": "zh-desc",
+      "input": "f对x的偏导数",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{\\partial f}{\\partial x}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "f 对 x 的偏导数",
+        "latex": "\\frac{\\partial f}{\\partial x}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1013,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-10",
+      "category": "zh-desc",
+      "input": "向量a点乘向量b",
+      "expect": {
+        "status": "ok",
+        "latex": "\\vec{a}\\cdot\\vec{b}",
+        "alternatives": [
+          "\\mathbf{a}\\cdot\\mathbf{b}",
+          "\\boldsymbol{a}\\cdot\\boldsymbol{b}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "向量 a 与向量 b 的点积",
+        "latex": "\\vec{a} \\cdot \\vec{b}",
+        "alternatives": [
+          {
+            "latex": "\\mathbf{a} \\cdot \\mathbf{b}",
+            "interpretation": "用粗体表示向量"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 957,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-11",
+      "category": "zh-desc",
+      "input": "一个二阶矩阵，第一行是1和2，第二行是3和4",
+      "expect": {
+        "status": "ok",
+        "latex": "\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}",
+        "alternatives": [
+          "\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "一个 2×2 矩阵，第一行为 1、2，第二行为 3、4",
+        "latex": "\\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1213,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-12",
+      "category": "zh-desc",
+      "input": "x大于等于零",
+      "expect": {
+        "status": "ok",
+        "latex": "x\\ge0",
+        "alternatives": [
+          "x\\geq0",
+          "x\\geqslant0"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 大于等于 0",
+        "latex": "x \\ge 0",
+        "alternatives": [
+          {
+            "latex": "x \\geq 0",
+            "interpretation": "使用 \\geq 的等价写法"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 674,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-13",
+      "category": "zh-desc",
+      "input": "集合A并集合B",
+      "expect": {
+        "status": "ok",
+        "latex": "A\\cup B"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "集合 A 与集合 B 的并集",
+        "latex": "A \\cup B",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 826,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-14",
+      "category": "zh-desc",
+      "input": "以2为底8的对数",
+      "expect": {
+        "status": "ok",
+        "latex": "\\log_{2}8",
+        "value": "3"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "以 2 为底 8 的对数",
+        "latex": "\\log_{2} 8",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "3"
+        }
+      },
+      "latencyMs": 1110,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "zh-15",
+      "category": "zh-desc",
+      "input": "1加二分之一加三分之一一直加到n分之一",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sum_{k=1}^{n}\\frac{1}{k}",
+        "alternatives": [
+          "1+\\frac{1}{2}+\\frac{1}{3}+\\cdots+\\frac{1}{n}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "从 1 到 n 的调和级数和：1 + 1/2 + 1/3 + … + 1/n",
+        "latex": "\\sum_{k=1}^{n} \\frac{1}{k}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "结果依赖于 n，无固定数值"
+      },
+      "latencyMs": 1155,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "en-01",
+      "category": "en-spoken",
+      "input": "x squared plus y squared equals one",
+      "expect": {
+        "status": "ok",
+        "latex": "x^{2}+y^{2}=1"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x squared plus y squared equals 1",
+        "latex": "x^{2} + y^{2} = 1",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 950,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "en-02",
+      "category": "en-spoken",
+      "input": "the integral of e to the minus x squared from minus infinity to infinity",
+      "expect": {
+        "status": "ok",
+        "latex": "\\int_{-\\infty}^{\\infty}e^{-x^{2}}\\,dx",
+        "value": "\\sqrt{\\pi}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "e 的负 x 平方从负无穷到正无穷的积分",
+        "latex": "\\int_{-\\infty}^{\\infty} e^{-x^{2}} \\, dx",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "\\sqrt{\\pi}"
+        }
+      },
+      "latencyMs": 1031,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "en-03",
+      "category": "en-spoken",
+      "input": "sine of x over x",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\frac{\\sin x}{x}",
+        "alternatives": [
+          "\\sin\\left(\\frac{x}{x}\\right)"
+        ]
+      },
+      "got": {
+        "status": "ambiguous",
+        "interpretation": "the sine of x divided by x",
+        "latex": "\\frac{\\sin x}{x}",
+        "alternatives": [
+          {
+            "latex": "\\sin\\left(\\frac{x}{x}\\right)",
+            "interpretation": "sine of x divided by x, i.e. sin(x/x)"
+          }
+        ],
+        "features": [],
+        "confidence": "medium",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "通常按惯例理解为 sin(x)/x"
+      },
+      "latencyMs": 1540,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": true,
+      "pass": true
+    },
+    {
+      "id": "en-04",
+      "category": "en-spoken",
+      "input": "limit as x goes to zero of sine x over x",
+      "expect": {
+        "status": "ok",
+        "latex": "\\lim_{x\\to0}\\frac{\\sin x}{x}",
+        "value": "1"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 趋于 0 时 sin(x)/x 的极限",
+        "latex": "\\lim_{x \\to 0} \\frac{\\sin x}{x}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "1"
+        }
+      },
+      "latencyMs": 1151,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "en-05",
+      "category": "en-spoken",
+      "input": "the derivative of f with respect to x",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{df}{dx}",
+        "alternatives": [
+          "f'(x)",
+          "\\frac{\\mathrm{d}f}{\\mathrm{d}x}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "the derivative of f with respect to x",
+        "latex": "\\frac{df}{dx}",
+        "alternatives": [
+          {
+            "latex": "f'(x)",
+            "interpretation": "the derivative written using prime notation"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1078,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "en-06",
+      "category": "en-spoken",
+      "input": "sum from k equals 1 to n of k squared",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sum_{k=1}^{n}k^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "The sum of k squared from k = 1 to n.",
+        "latex": "\\sum_{k=1}^{n} k^{2}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1645,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "en-07",
+      "category": "en-spoken",
+      "input": "square root of x plus one",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\sqrt{x+1}",
+        "alternatives": [
+          "\\sqrt{x}+1"
+        ]
+      },
+      "got": {
+        "status": "ambiguous",
+        "interpretation": "x 加 1 的平方根",
+        "latex": "\\sqrt{x+1}",
+        "alternatives": [
+          {
+            "latex": "\\sqrt{x}+1",
+            "interpretation": "x 的平方根再加 1"
+          }
+        ],
+        "features": [],
+        "confidence": "medium",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "英文短语无逗号，常见理解为对 x+1 开方"
+      },
+      "latencyMs": 1928,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": true,
+      "pass": true
+    },
+    {
+      "id": "en-08",
+      "category": "en-spoken",
+      "input": "a over b plus c",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\frac{a}{b}+c",
+        "alternatives": [
+          "\\frac{a}{b+c}"
+        ]
+      },
+      "got": {
+        "status": "not_math",
+        "interpretation": "",
+        "latex": "",
+        "alternatives": [],
+        "features": [],
+        "confidence": "low",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 2596,
+      "statusOk": false,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "ambiguityExposed": false,
+      "pass": false
+    },
+    {
+      "id": "en-09",
+      "category": "en-spoken",
+      "input": "n choose k",
+      "expect": {
+        "status": "ok",
+        "latex": "\\binom{n}{k}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "the binomial coefficient n choose k",
+        "latex": "\\binom{n}{k}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1252,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "en-10",
+      "category": "en-spoken",
+      "input": "the absolute value of x minus 2",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "|x-2|",
+        "alternatives": [
+          "|x|-2",
+          "\\left|x-2\\right|"
+        ]
+      },
+      "got": {
+        "status": "ambiguous",
+        "interpretation": "the absolute value of x minus 2, i.e. |x - 2|",
+        "latex": "\\left|x-2\\right|",
+        "alternatives": [
+          {
+            "latex": "\\left|x\\right|-2",
+            "interpretation": "the absolute value of x, then subtract 2"
+          }
+        ],
+        "features": [],
+        "confidence": "medium",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "Without punctuation, the scope of “minus 2” is ambiguous."
+      },
+      "latencyMs": 2548,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": true,
+      "pass": true
+    },
+    {
+      "id": "sl-01",
+      "category": "sloppy",
+      "input": "limit->0(sinx/x)",
+      "expect": {
+        "status": "ambiguous",
+        "latex": "\\lim_{x\\to0}\\frac{\\sin x}{x}",
+        "alternatives": [
+          "\\lim_{x\\to0}\\sin\\left(\\frac{x}{x}\\right)"
+        ],
+        "value": "1"
+      },
+      "got": {
+        "status": "ambiguous",
+        "interpretation": "x 趋于 0 时 sin(x)/x 的极限",
+        "latex": "\\lim_{x \\to 0} \\frac{\\sin x}{x}",
+        "alternatives": [
+          {
+            "latex": "\\lim_{x \\to 0} \\sin\\left(\\frac{x}{x}\\right)",
+            "interpretation": "改为 sin(x/x)"
+          }
+        ],
+        "features": [],
+        "confidence": "medium",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "1"
+        },
+        "notes": "按惯例取 sin(x)/x"
+      },
+      "latencyMs": 995,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": true,
+      "pass": true
+    },
+    {
+      "id": "sl-02",
+      "category": "sloppy",
+      "input": "integral_1^2 (x+1)^2 dx",
+      "expect": {
+        "status": "ok",
+        "latex": "\\int_{1}^{2}(x+1)^{2}\\,dx",
+        "value": "19/3"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "(x+1)² 从 1 到 2 的定积分",
+        "latex": "\\int_{1}^{2} (x+1)^{2} \\, dx",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "19/3"
+        }
+      },
+      "latencyMs": 1439,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-03",
+      "category": "sloppy",
+      "input": "sum_{k=1}^n k^2",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sum_{k=1}^{n}k^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "k 从 1 到 n 的 k 平方和",
+        "latex": "\\sum_{k=1}^{n} k^{2}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 2022,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-04",
+      "category": "sloppy",
+      "input": "sqrt(x^2+1)",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sqrt{x^{2}+1}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "根号下 x 的平方加 1",
+        "latex": "\\sqrt{x^{2}+1}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 984,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-05",
+      "category": "sloppy",
+      "input": "x -> 0",
+      "expect": {
+        "status": "ok",
+        "latex": "x\\to0",
+        "alternatives": [
+          "x\\rightarrow0"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 趋于 0",
+        "latex": "x \\to 0",
+        "alternatives": [],
+        "features": [],
+        "confidence": "medium",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "仅是一个趋近记号，未给出完整表达式"
+      },
+      "latencyMs": 1000,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-06",
+      "category": "sloppy",
+      "input": "x >= 0",
+      "expect": {
+        "status": "ok",
+        "latex": "x\\ge0",
+        "alternatives": [
+          "x\\geq0"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 大于等于 0",
+        "latex": "x \\ge 0",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1043,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-07",
+      "category": "sloppy",
+      "input": "pi r^2",
+      "expect": {
+        "status": "ok",
+        "latex": "\\pi r^{2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "π times r squared",
+        "latex": "\\pi r^{2}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1662,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-08",
+      "category": "sloppy",
+      "input": "ln x",
+      "expect": {
+        "status": "ok",
+        "latex": "\\ln x"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "自然对数 ln x",
+        "latex": "\\ln x",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 679,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-09",
+      "category": "sloppy",
+      "input": "e^{i pi} + 1 = 0",
+      "expect": {
+        "status": "ok",
+        "latex": "e^{i\\pi}+1=0"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "欧拉恒等式 e^{iπ} + 1 = 0",
+        "latex": "e^{i\\pi} + 1 = 0",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "0"
+        },
+        "notes": "按 e^{iπ}+1 求值确为 0"
+      },
+      "latencyMs": 1405,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-10",
+      "category": "sloppy",
+      "input": "d/dx x^2",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{d}{dx}x^{2}",
+        "alternatives": [
+          "\\frac{d}{dx}\\left(x^{2}\\right)",
+          "\\frac{\\mathrm{d}}{\\mathrm{d}x}x^{2}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "The derivative with respect to x of x squared",
+        "latex": "\\frac{d}{dx} x^{2}",
+        "alternatives": [
+          {
+            "latex": "\\frac{d}{dx}\\left(x^{2}\\right)",
+            "interpretation": "Same derivative with explicit parentheses around x squared"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 2042,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-11",
+      "category": "sloppy",
+      "input": "int_0^1 x dx",
+      "expect": {
+        "status": "ok",
+        "latex": "\\int_{0}^{1}x\\,dx",
+        "value": "1/2"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 从 0 到 1 的定积分",
+        "latex": "\\int_{0}^{1} x \\, dx",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "1/2"
+        }
+      },
+      "latencyMs": 1007,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-12",
+      "category": "sloppy",
+      "input": "lim_{n->inf} (1+1/n)^n",
+      "expect": {
+        "status": "ok",
+        "latex": "\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n}",
+        "value": "e"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "n 趋于无穷时 (1+1/n)^n 的极限",
+        "latex": "\\lim_{n \\to \\infty} \\left(1 + \\frac{1}{n}\\right)^{n}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "e"
+        }
+      },
+      "latencyMs": 906,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-13",
+      "category": "sloppy",
+      "input": "sin^2 x + cos^2 x = 1",
+      "expect": {
+        "status": "ok",
+        "latex": "\\sin^{2}x+\\cos^{2}x=1"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "三角恒等式：sin 平方 x 加 cos 平方 x 等于 1",
+        "latex": "\\sin^{2} x + \\cos^{2} x = 1",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "恒等式，非具体数值求值"
+      },
+      "latencyMs": 1157,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-14",
+      "category": "sloppy",
+      "input": "a_n = a_{n-1} + a_{n-2}",
+      "expect": {
+        "status": "ok",
+        "latex": "a_{n}=a_{n-1}+a_{n-2}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "数列满足递推关系：a_n 等于前两项之和",
+        "latex": "a_{n} = a_{n-1} + a_{n-2}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1443,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "sl-15",
+      "category": "sloppy",
+      "input": "abc",
+      "expect": {
+        "status": "ok",
+        "latex": "abc"
+      },
+      "got": {
+        "status": "not_math",
+        "interpretation": "",
+        "latex": "",
+        "alternatives": [],
+        "features": [],
+        "confidence": "low",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 2868,
+      "statusOk": false,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "ambiguityExposed": null,
+      "pass": false
+    },
+    {
+      "id": "mx-01",
+      "category": "mixed",
+      "input": "用分数写 x 除以 y",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{x}{y}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "用分数形式表示 x 除以 y",
+        "latex": "\\frac{x}{y}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 732,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "mx-02",
+      "category": "mixed",
+      "input": "x 的 n 次方 over n factorial",
+      "expect": {
+        "status": "ok",
+        "latex": "\\frac{x^{n}}{n!}"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "x 的 n 次方除以 n 的阶乘",
+        "latex": "\\frac{x^{n}}{n!}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 852,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "mx-03",
+      "category": "mixed",
+      "input": "求 sin x 从 0 到 pi 的积分",
+      "expect": {
+        "status": "ok",
+        "latex": "\\int_{0}^{\\pi}\\sin x\\,dx",
+        "value": "2"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "sin x 从 0 到 π 的定积分",
+        "latex": "\\int_{0}^{\\pi} \\sin x \\, dx",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "2"
+        }
+      },
+      "latencyMs": 735,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "mx-04",
+      "category": "mixed",
+      "input": "矩阵 [[1,2],[3,4]] 的行列式",
+      "expect": {
+        "status": "ok",
+        "latex": "\\det\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}",
+        "alternatives": [
+          "\\begin{vmatrix}1&2\\\\3&4\\end{vmatrix}"
+        ],
+        "value": "-2"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "矩阵 [[1,2],[3,4]] 的行列式",
+        "latex": "\\det \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "numeric",
+          "expected": "-2"
+        }
+      },
+      "latencyMs": 1147,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "mx-05",
+      "category": "mixed",
+      "input": "P(A|B) = P(B|A)P(A)/P(B)",
+      "expect": {
+        "status": "ok",
+        "latex": "P(A\\mid B)=\\frac{P(B\\mid A)P(A)}{P(B)}",
+        "alternatives": [
+          "P(A|B)=\\frac{P(B|A)P(A)}{P(B)}"
+        ]
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "贝叶斯公式：在 B 发生的条件下 A 的概率等于 P(B|A)P(A) 除以 P(B)",
+        "latex": "P(A \\mid B) = \\frac{P(B \\mid A)\\,P(A)}{P(B)}",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 1010,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "string",
+      "rendersOk": true,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "bd-01",
+      "category": "boundary",
+      "input": "画一个 A 到 B 的交换图",
+      "expect": {
+        "status": "unsupported",
+        "features": [
+          "tikz-cd"
+        ]
+      },
+      "got": {
+        "status": "unsupported",
+        "interpretation": "画一个从 A 到 B 的交换图",
+        "latex": "",
+        "alternatives": [],
+        "features": [
+          "tikz-cd"
+        ],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "交换图需要 tikz-cd 等绘图宏包，本编辑器不支持"
+      },
+      "latencyMs": 1030,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "bd-02",
+      "category": "boundary",
+      "input": "用 tikz 画一个单位圆",
+      "expect": {
+        "status": "unsupported",
+        "features": [
+          "tikz"
+        ]
+      },
+      "got": {
+        "status": "unsupported",
+        "interpretation": "用 TikZ 绘制一个单位圆",
+        "latex": "",
+        "alternatives": [],
+        "features": [
+          "tikz"
+        ],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "需要 TikZ 绘图支持"
+      },
+      "latencyMs": 1025,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "bd-03",
+      "category": "boundary",
+      "input": "3 米每秒，用 siunitx 写",
+      "expect": {
+        "status": "unsupported",
+        "features": [
+          "siunitx"
+        ]
+      },
+      "got": {
+        "status": "unsupported",
+        "interpretation": "用 siunitx 表示 3 米每秒",
+        "latex": "",
+        "alternatives": [],
+        "features": [
+          "siunitx"
+        ],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "单位排版需要 siunitx 宏包"
+      },
+      "latencyMs": 1164,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "nm-01",
+      "category": "not-math",
+      "input": "今天天气不错",
+      "expect": {
+        "status": "not_math"
+      },
+      "got": {
+        "status": "not_math",
+        "interpretation": "这不是数学内容",
+        "latex": "",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "不是数学内容"
+      },
+      "latencyMs": 1141,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "ambiguityExposed": null,
+      "pass": true
+    },
+    {
+      "id": "nm-02",
+      "category": "not-math",
+      "input": "帮我写一封邮件给老师",
+      "expect": {
+        "status": "not_math"
+      },
+      "got": {
+        "status": "not_math",
+        "interpretation": "",
+        "latex": "",
+        "alternatives": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "请求是写邮件，非数学内容"
+      },
+      "latencyMs": 661,
+      "statusOk": true,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "ambiguityExposed": null,
+      "pass": true
+    }
+  ]
+}

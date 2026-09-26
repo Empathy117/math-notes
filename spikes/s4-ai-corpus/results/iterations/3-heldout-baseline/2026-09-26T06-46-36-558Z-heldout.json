@@ -1,0 +1,209 @@
+{
+  "suite": "heldout",
+  "model": "deepseek-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "thinking": null,
+  "maxTokens": null,
+  "outcomes": [
+    {
+      "id": "hn-01",
+      "category": "ho-natural",
+      "input": "硫酸的化学式",
+      "expect": {
+        "status": "ok",
+        "pattern": "H.{0,15}2.{0,15}SO.{0,8}4"
+      },
+      "got": {
+        "status": "unsupported",
+        "interpretation": "硫酸的化学式",
+        "latex": "",
+        "alternatives": [],
+        "notations": [],
+        "features": [
+          "mhchem"
+        ],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "化学式需要 mhchem 的 \\ce 命令"
+      },
+      "latencyMs": 984,
+      "firstTokenMs": 698,
+      "finishReason": "stop",
+      "completionTokens": 65,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": false,
+      "statusOk": false,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": false
+    },
+    {
+      "id": "hn-02",
+      "category": "ho-natural",
+      "input": "水的电离方程式",
+      "expect": {
+        "status": "ok",
+        "pattern": "H.{0,15}2.{0,15}O.*(\\\\rightleftharpoons|\\\\leftrightharpoons|\\\\rightleftarrows|\\\\leftrightarrows|\\\\leftrightarrow|\\\\longleftrightarrow|\\\\rightarrow|\\\\longrightarrow|\\\\to|=).*OH"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "水的电离方程式",
+        "latex": "\\mathrm{H_2O} \\rightleftharpoons \\mathrm{H^{+}} + \\mathrm{OH^{-}}",
+        "alternatives": [],
+        "notations": [],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 826,
+      "firstTokenMs": 528,
+      "finishReason": "stop",
+      "completionTokens": 74,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "hn-03",
+      "category": "ho-natural",
+      "input": "氢氧化钠和盐酸反应的化学方程式",
+      "expect": {
+        "status": "ok",
+        "pattern": "NaOH.*HCl.*(\\\\rightarrow|\\\\longrightarrow|\\\\to|=).*NaCl"
+      },
+      "got": {
+        "status": "unsupported",
+        "interpretation": "氢氧化钠与盐酸反应的化学方程式",
+        "latex": "",
+        "alternatives": [],
+        "notations": [],
+        "features": [
+          "mhchem"
+        ],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "化学方程式需要 mhchem 的 \\ce 命令"
+      },
+      "latencyMs": 668,
+      "firstTokenMs": 435,
+      "finishReason": "stop",
+      "completionTokens": 68,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": false,
+      "statusOk": false,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": false
+    },
+    {
+      "id": "hn-04",
+      "category": "ho-natural",
+      "input": "一个表格：第一行是 a、b、c，第二行是 1、2、3",
+      "expect": {
+        "status": "ok",
+        "pattern": "\\\\begin\\{(array|matrix|smallmatrix|pmatrix|bmatrix)\\}.*a&b&c.*1&2&3"
+      },
+      "got": {
+        "status": "ok",
+        "interpretation": "一个两行三列的表格，第一行 a、b、c，第二行 1、2、3",
+        "latex": "\\begin{array}{ccc} a & b & c \\\\ 1 & 2 & 3 \\end{array}",
+        "alternatives": [],
+        "notations": [
+          {
+            "latex": "\\begin{pmatrix} a & b & c \\\\ 1 & 2 & 3 \\end{pmatrix}",
+            "interpretation": "用圆括号矩阵表示"
+          }
+        ],
+        "features": [],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        }
+      },
+      "latencyMs": 856,
+      "firstTokenMs": 391,
+      "finishReason": "stop",
+      "completionTokens": 128,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": true,
+      "statusOk": true,
+      "latexOk": true,
+      "judge": "pattern",
+      "rendersOk": true,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": true
+    },
+    {
+      "id": "hn-05",
+      "category": "ho-natural",
+      "input": "25 摄氏度",
+      "expect": {
+        "status": "ok",
+        "pattern": "25.*(\\\\circ|\\\\degree|°).*C"
+      },
+      "got": {
+        "status": "unsupported",
+        "interpretation": "25 摄氏度",
+        "latex": "",
+        "alternatives": [],
+        "notations": [],
+        "features": [
+          "siunitx"
+        ],
+        "confidence": "high",
+        "consistency": {
+          "kind": "none"
+        },
+        "notes": "带单位的量需要 siunitx 的 \\qty 或 \\SI"
+      },
+      "latencyMs": 664,
+      "firstTokenMs": 357,
+      "finishReason": "stop",
+      "completionTokens": 68,
+      "jsonOk": true,
+      "retried": null,
+      "statusExact": false,
+      "statusOk": false,
+      "latexOk": null,
+      "judge": "n/a",
+      "rendersOk": null,
+      "katexWarnings": [],
+      "ambiguityExposed": null,
+      "falseAmbiguity": false,
+      "numeric": null,
+      "pass": false
+    }
+  ],
+  "edits": []
+}

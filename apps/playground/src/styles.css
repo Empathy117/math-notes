@@ -1,0 +1,857 @@
+:root {
+  --bg: #f4f5f7;
+  --paper: #ffffff;
+  --ink: #1d2128;
+  --ink-2: #4a515c;
+  --muted: #7a818c;
+  --line: #e4e7eb;
+  --line-strong: #d3d8de;
+  --accent: #3563e9;
+  --accent-ink: #ffffff;
+  --accent-soft: #edf2ff;
+  --accent-line: #c9d7ff;
+  --ok: #1a7f37;
+  --amber: #9a6700;
+  --info: #0969da;
+  --danger: #b42318;
+  --danger-soft: #fff1f0;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 6px 24px rgba(16, 24, 40, 0.1), 0 1px 3px rgba(16, 24, 40, 0.06);
+  --radius: 10px;
+  --mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+  font-family: system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+select,
+textarea,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 1.4em;
+  padding: 0 0.35em;
+  border: 1px solid var(--line-strong);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: #fafbfc;
+  font-family: var(--mono);
+  font-size: 0.78em;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--ink-2);
+}
+
+/* ---- top bar --------------------------------------------------------------- */
+
+.mn-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.mn-topbar-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mn-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-right: 6px;
+}
+
+.mn-logo {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  font-family: KaTeX_Main, 'Times New Roman', serif;
+  font-size: 18px;
+}
+
+.mn-spacer {
+  flex: 1;
+}
+
+.mn-badge {
+  font-size: 12px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #eef0f3;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+/* ---- buttons, segmented controls ------------------------------------------ */
+
+.mn-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--paper);
+  font-size: 13.5px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.12s,
+    border-color 0.12s,
+    box-shadow 0.12s;
+}
+
+.mn-btn:hover {
+  background: #f6f7f9;
+}
+
+.mn-btn:focus-visible,
+.mn-seg button:focus-visible,
+.mn-bubble button:focus-visible,
+.mn-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.mn-btn:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.mn-btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 550;
+  box-shadow: var(--shadow-sm);
+}
+
+.mn-btn-primary:hover {
+  background: #2a55d4;
+}
+
+.mn-btn-primary:disabled {
+  background: var(--accent);
+}
+
+.mn-btn-icon {
+  width: 32px;
+  padding: 0;
+  color: var(--ink-2);
+}
+
+.mn-btn-ghost {
+  border-color: transparent;
+  background: transparent;
+  color: var(--accent);
+  padding: 0 8px;
+  height: 28px;
+}
+
+.mn-btn-ghost:hover {
+  background: var(--accent-soft);
+}
+
+.mn-seg {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border-radius: 9px;
+  background: #eceef2;
+}
+
+.mn-seg button {
+  height: 26px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink-2);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.mn-seg button[aria-checked='true'] {
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 560;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.12);
+}
+
+.mn-seg-sm button {
+  height: 22px;
+  padding: 0 9px;
+  font-size: 12px;
+}
+
+.mn-spinner {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: mn-spin 0.7s linear infinite;
+  flex: none;
+}
+
+@keyframes mn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---- more menu -------------------------------------------------------------- */
+
+.mn-menu {
+  position: relative;
+}
+
+.mn-menu-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: 330px;
+  padding: 6px 16px 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  font-size: 13px;
+  color: var(--ink-2);
+  z-index: 60;
+}
+
+.mn-menu-panel[hidden] {
+  display: none;
+}
+
+.mn-menu-panel section + section {
+  border-top: 1px solid var(--line);
+}
+
+.mn-menu-panel h3 {
+  margin: 12px 0 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.mn-keys {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 7px 12px;
+  margin: 0;
+  align-items: baseline;
+}
+
+.mn-keys dt {
+  white-space: nowrap;
+}
+
+.mn-keys dd {
+  margin: 0;
+}
+
+.mn-field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.mn-field-row select {
+  height: 28px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--paper);
+  font-size: 13px;
+  padding: 0 6px;
+}
+
+.mn-metrics {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.mn-metrics code {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  background: #f1f3f5;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+/* ---- page and paper --------------------------------------------------------- */
+
+.mn-page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 16px 200px;
+}
+
+.mn-paper {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.mn-tip {
+  margin: 12px 4px 0;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.ProseMirror {
+  min-height: 420px;
+  padding: 36px 48px 44px;
+  line-height: 1.8;
+  font-size: 17px;
+  outline: none;
+  caret-color: var(--accent);
+}
+
+.ProseMirror > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.ProseMirror > * + * {
+  margin-top: 0.75em;
+}
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3 {
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  font-weight: 650;
+}
+
+.ProseMirror h2 {
+  font-size: 1.45em;
+}
+
+.ProseMirror > h2 + * {
+  margin-top: 0.4em;
+}
+
+.ProseMirror > * + h2 {
+  margin-top: 1.5em;
+}
+
+.ProseMirror ::selection {
+  background: #cfdcff;
+}
+
+@media (max-width: 640px) {
+  .ProseMirror {
+    padding: 24px 20px 32px;
+  }
+}
+
+/* Typora-style Markdown markers of what the caret is in (MarkdownReveal). */
+.mn-md-mark {
+  color: #959ca7;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  white-space: pre;
+  user-select: none;
+}
+
+.ProseMirror:not(.ProseMirror-focused) .mn-md-mark {
+  display: none;
+}
+
+.ProseMirror code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: #f1f3f6;
+}
+
+.ProseMirror a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ProseMirror blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1em;
+  border-left: 3px solid var(--line-strong);
+  color: var(--ink-2);
+}
+
+.ProseMirror pre {
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #f6f8fa;
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ProseMirror pre code {
+  padding: 0;
+  background: none;
+  font-size: inherit;
+}
+
+/* ---- math nodes ------------------------------------------------------------- */
+
+.mn-math {
+  position: relative;
+}
+
+.mn-inline {
+  display: inline;
+}
+
+.mn-block {
+  display: block;
+  margin: 0.9em 0;
+  text-align: center;
+}
+
+/* The block's spacing lives on the node, so the static render and the field share one box. */
+.mn-block .katex-display {
+  margin: 0;
+}
+
+.mn-static {
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.12s;
+}
+
+.mn-inline .mn-static {
+  display: inline-block;
+  padding: 0 1px;
+}
+
+.mn-static:hover {
+  background: var(--accent-soft);
+}
+
+.mn-error {
+  color: var(--danger);
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--danger-soft);
+}
+
+/* Caret buffers: a text position that is not text (ProseMirror forum #8547). */
+.mn-buf {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.mn-selected .mn-static {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.mn-flash .mn-static {
+  animation: mn-flash 1.6s ease-out;
+}
+
+@keyframes mn-flash {
+  0%,
+  35% {
+    background: #fff1b8;
+    box-shadow: 0 0 0 3px #fff1b8;
+  }
+  100% {
+    background: transparent;
+    box-shadow: 0 0 0 3px transparent;
+  }
+}
+
+/* ---- the structural editor host --------------------------------------------- */
+
+/*
+ * KaTeX draws formulas at 1.21em of the text with line-height 1.2; the field must too, or a
+ * formula shrinks when opened and its line grows (the paragraph's 1.8 at the larger size).
+ */
+math-field.mn-field {
+  font-size: 1.21em;
+  line-height: 1.2;
+  border: none;
+  padding: 0;
+  background: transparent;
+  display: inline-block;
+  vertical-align: baseline;
+  min-width: 1ch;
+  border-radius: 4px;
+  --caret-color: var(--accent);
+  --selection-background-color: #cfdcff;
+  --contains-highlight-background-color: #f3f6ff;
+  --placeholder-color: var(--accent);
+}
+
+math-field.mn-field::part(container) {
+  padding: 0;
+}
+
+math-field.mn-field::part(content) {
+  padding: 0 1px;
+}
+
+math-field.mn-field:focus,
+math-field.mn-field:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-line);
+}
+
+math-field.mn-field::part(virtual-keyboard-toggle),
+math-field.mn-field::part(menu-toggle) {
+  display: none;
+}
+
+.mn-block math-field.mn-field {
+  display: block;
+}
+
+.mn-block math-field.mn-field::part(content) {
+  justify-content: center;
+}
+
+.mn-editing .mn-static {
+  display: none;
+}
+
+/* ---- text mode: the LaTeX source and its live preview ------------------------ */
+
+.mn-source {
+  font-family: var(--mono);
+  color: #1b4fb8;
+}
+
+.mn-source-inline {
+  display: inline-flex;
+  align-items: baseline;
+  padding: 0 3px;
+  border-radius: 5px;
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 1px var(--accent-line);
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+
+.mn-source-delim {
+  color: #8aa2d8;
+  user-select: none;
+}
+
+.mn-source-field {
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0 1px;
+  margin: 0;
+}
+
+.mn-source-inline .mn-source-field {
+  min-width: 2ch;
+  max-width: 60vw;
+}
+
+.mn-source-block {
+  display: block;
+  text-align: left;
+  border-radius: 8px;
+  background: #f5f8ff;
+  box-shadow: 0 0 0 1px var(--accent-line);
+  font-size: 14.5px;
+}
+
+.mn-source-block .mn-source-field {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  resize: none;
+  line-height: 1.6;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.mn-preview {
+  min-width: 140px;
+  max-width: min(640px, calc(100vw - 16px));
+  padding: 10px 14px 8px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+}
+
+.mn-preview-body {
+  overflow-x: auto;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.mn-preview-body:empty {
+  display: none;
+}
+
+.mn-preview-note {
+  margin-top: 6px;
+  font-family: system-ui, -apple-system, 'PingFang SC', sans-serif;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.mn-preview-body:empty + .mn-preview-note {
+  margin-top: 0;
+}
+
+.mn-preview-error {
+  border-color: #f3c3bd;
+}
+
+.mn-preview-error .mn-preview-body {
+  opacity: 0.45;
+}
+
+.mn-preview-error .mn-preview-note {
+  color: var(--danger);
+}
+
+/* ---- portals (overlay / popover / preview) ----------------------------------- */
+
+.mn-portal {
+  position: absolute;
+  z-index: 1000;
+}
+
+.mn-portal-overlay {
+  display: flex;
+  align-items: center;
+  background: var(--paper);
+}
+
+.mn-portal-popover {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  padding: 6px 10px;
+}
+
+/* ---- selection bubble --------------------------------------------------------- */
+
+.mn-bubble {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 10px;
+  background: #1d2128;
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(16, 24, 40, 0.28);
+  z-index: 40;
+}
+
+.mn-bubble button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mn-bubble button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.mn-bubble kbd {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.mn-bubble-icon {
+  font-family: KaTeX_Main, 'Times New Roman', serif;
+  font-size: 16px;
+}
+
+.mn-bubble-busy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 12px;
+  font-size: 13.5px;
+}
+
+/* ---- composer ------------------------------------------------------------------ */
+
+.mn-composer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 16px 16px;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.mn-composer-card {
+  max-width: 880px;
+  margin: 0 auto;
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+  pointer-events: auto;
+  transition:
+    border-color 0.12s,
+    box-shadow 0.12s;
+}
+
+.mn-composer-card:focus-within {
+  border-color: var(--accent-line);
+  box-shadow:
+    0 0 0 3px rgba(53, 99, 233, 0.12),
+    var(--shadow-md);
+}
+
+.mn-composer textarea {
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: none;
+  resize: none;
+  background: transparent;
+  padding: 12px 16px 4px;
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+.mn-composer textarea::placeholder {
+  color: #9aa1ab;
+}
+
+.mn-composer-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px 10px 14px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.mn-send {
+  margin-left: auto;
+  height: 30px;
+}
+
+.mn-status {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+  line-height: 1.45;
+}
+
+.mn-status-pending {
+  color: var(--ink-2);
+}
+
+.mn-status-ok {
+  color: var(--ok);
+}
+
+.mn-status-ambiguous {
+  color: var(--amber);
+}
+
+.mn-status-boundary {
+  color: var(--info);
+}
+
+.mn-status-warn {
+  color: var(--danger);
+}
+
+.mn-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--ink);
+  background: #f6f7f9;
+  cursor: pointer;
+}
+
+.mn-chip:hover {
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+}
+
+@media (max-width: 640px) {
+  .mn-composer-bar {
+    flex-wrap: wrap;
+  }
+  .mn-badge {
+    display: none;
+  }
+}

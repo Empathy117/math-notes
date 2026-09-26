@@ -1,0 +1,19 @@
+{
+  "name": "s4-ai-corpus",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "eval": "tsx --env-file-if-exists=.env run.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@cortex-js/compute-engine": "^0.134.0",
+    "@math-notes/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

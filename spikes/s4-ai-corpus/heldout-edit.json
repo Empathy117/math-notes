@@ -1,0 +1,14 @@
+[
+  { "id": "he-01", "category": "ho-edit", "instruction": "把指数改成负的", "fullLatex": "e^{x^{2}}", "selectionLatex": "x^{2}", "expect": { "status": "ok", "latex": "-x^{2}" } },
+  { "id": "he-02", "category": "ho-edit", "instruction": "分母加上 1", "fullLatex": "\\frac{a}{b}", "selectionLatex": "b", "expect": { "status": "ok", "latex": "b+1" } },
+  { "id": "he-03", "category": "ho-edit", "instruction": "把 n 换成 k", "fullLatex": "\\sum_{n=1}^{\\infty}\\frac{1}{n^{2}}", "selectionLatex": "\\frac{1}{n^{2}}", "expect": { "status": "ok", "latex": "\\frac{1}{k^{2}}" } },
+  { "id": "he-04", "category": "ho-edit", "instruction": "开根号", "fullLatex": "y=x^{2}+1", "selectionLatex": "x^{2}+1", "expect": { "status": "ok", "latex": "\\sqrt{x^{2}+1}" } },
+  { "id": "he-05", "category": "ho-edit", "instruction": "写成分数", "fullLatex": "a=0.5b", "selectionLatex": "0.5", "expect": { "status": "ok", "latex": "\\frac{1}{2}" } },
+  { "id": "he-06", "category": "ho-edit", "instruction": "改成从 0 开始", "fullLatex": "\\sum_{k=1}^{10}k", "selectionLatex": "k=1", "expect": { "status": "ok", "latex": "k=0" } },
+  { "id": "he-07", "category": "ho-edit", "instruction": "把这个 2 改成 n", "fullLatex": "x^{2}+2x", "selectionLatex": "2", "expect": { "status": "ok", "latex": "n" } },
+  { "id": "he-08", "category": "ho-edit", "instruction": "这个", "fullLatex": "\\alpha+\\beta", "selectionLatex": "\\beta", "expect": { "status": "unclear" } },
+
+  { "id": "hf-e1", "category": "ho-fresh-edit", "instruction": "改改", "fullLatex": "x^{2}+1", "selectionLatex": "x^{2}", "expect": { "status": "unclear" } },
+  { "id": "hf-e2", "category": "ho-fresh-edit", "instruction": "那个", "fullLatex": "a+b", "selectionLatex": "a", "expect": { "status": "unclear" } },
+  { "id": "hf-e3", "category": "ho-fresh-edit", "instruction": "换一下", "fullLatex": "\\sin x", "selectionLatex": "x", "expect": { "status": "unclear" } }
+]
