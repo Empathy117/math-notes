@@ -96,6 +96,7 @@ export class MathLiveEditor implements StructuredMathEditor {
     commit: new Set(),
     moveOut: new Set(),
     selectionChange: new Set(),
+    copy: new Set(),
   };
   private readonly disposers: (() => void)[] = [];
   /** Caret offset right after a space the user typed, while the next key may still absorb it. */
@@ -113,6 +114,10 @@ export class MathLiveEditor implements StructuredMathEditor {
     mf.defaultMode = opts.display === 'block' ? 'math' : 'inline-math';
     mf.smartMode = false;
     mf.readOnly = Boolean(opts.readOnly);
+    // The plain text MathLive copies: the formula as stored, without the editor-only rewrites
+    // (`\displaylimits`, `\differentialD`, which KaTeX does not know) and without MathLive's `$$`
+    // wrapper, so both editors copy bare LaTeX.
+    mf.onExport = (_mf, latex) => fromEditorLatex(latex);
     mf.value = initial;
     // `menuItems`, `macros` and `inlineShortcuts` throw "Mathfield not mounted" until the element is connected.
     this.listen('mount', () => {
@@ -128,6 +133,15 @@ export class MathLiveEditor implements StructuredMathEditor {
     this.listen('selection-change', () => this.emit('selectionChange', this.getSelection()));
     // Capture: runs before MathLive's own handler inside the shadow root.
     this.listen('keydown', (ev) => this.onKeyDown(ev), true);
+    // Bubble: runs after MathLive's own handler has filled the clipboard.
+    this.listen('copy', (ev) => this.onCopied(ev));
+  }
+
+  /** MathLive copied a selection of math (text-only selections carry no `application/x-latex`). */
+  private onCopied(ev: ClipboardEvent): void {
+    const data = ev.clipboardData;
+    const latex = ev.defaultPrevented && data ? data.getData('application/x-latex') : '';
+    if (data && latex) this.emit('copy', { latex: fromEditorLatex(latex), data });
   }
 
   private listen<K extends keyof HTMLElementEventMap>(

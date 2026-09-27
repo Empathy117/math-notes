@@ -4,7 +4,8 @@
  * runs the same session for both; the NodeView adds the live-rendered preview.
  *
  * Keys match the structural editor: an arrow key at the edge of the source leaves the formula
- * (`moveOut`), Enter in a block formula starts a new formula line (`insertLineBreak`).
+ * (`moveOut`), Enter in a block formula starts a new formula line (`insertLineBreak`). So does the
+ * clipboard: a copy is bare LaTeX, and a formula pasted in `$…$` goes in without the `$`.
  */
 import type {
   CreateEditorOptions,
@@ -19,6 +20,20 @@ type Handler<K extends keyof StructuredMathEditorEvents> = (e: StructuredMathEdi
 /** Han characters and fullwidth forms take two columns in a monospace font. */
 const WIDE = /[\u1100-\u115f\u2e80-\ua4cf\uac00-\ud7a3\uf900-\ufaff\ufe30-\ufe4f\uff00-\uff60\uffe0-\uffe6]/g;
 
+/** One formula in `$$…$$`, `$…$`, `\[…\]` or `\(…\)`, taking up the whole text. */
+const DELIMITED =
+  /^(?:\$\$((?:[^$\\]|\\[\s\S])+)\$\$|\$((?:[^$\\]|\\[\s\S])+)\$|\\\[((?:(?!\\\])[\s\S])+)\\\]|\\\(((?:(?!\\\))[\s\S])+)\\\))$/;
+
+/**
+ * The LaTeX inside a pasted formula's delimiters (a formula copied from a note, a Markdown file,
+ * an AI answer), or null when the text is not exactly one delimited formula.
+ */
+export function unwrapDelimited(text: string): string | null {
+  const m = DELIMITED.exec(text.trim());
+  const inner = m ? (m[1] ?? m[2] ?? m[3] ?? m[4] ?? '').trim() : '';
+  return inner || null;
+}
+
 export class SourceMathEditor implements StructuredMathEditor {
   readonly element: HTMLElement;
   private readonly field: HTMLInputElement | HTMLTextAreaElement;
@@ -28,6 +43,7 @@ export class SourceMathEditor implements StructuredMathEditor {
     commit: new Set(),
     moveOut: new Set(),
     selectionChange: new Set(),
+    copy: new Set(),
   };
 
   constructor(opts: CreateEditorOptions) {
@@ -53,6 +69,8 @@ export class SourceMathEditor implements StructuredMathEditor {
     const el: HTMLElement = field;
     el.addEventListener('input', this.onInput);
     el.addEventListener('keydown', this.onKeyDown);
+    el.addEventListener('copy', this.onCopy);
+    el.addEventListener('paste', this.onPaste);
     if (this.block) {
       wrap.appendChild(field);
     } else {
@@ -86,6 +104,23 @@ export class SourceMathEditor implements StructuredMathEditor {
               ? 'downward'
               : null;
     if (direction) this.emit('moveOut', { direction });
+  };
+
+  /** The same plain text as the native copy, written here so that listeners can add formats. */
+  private readonly onCopy = (ev: ClipboardEvent): void => {
+    const { start, end, latex } = this.getSelection();
+    if (start === end || !ev.clipboardData) return;
+    ev.preventDefault();
+    ev.clipboardData.setData('text/plain', latex);
+    this.emit('copy', { latex, data: ev.clipboardData });
+  };
+
+  /** A delimited formula goes in without its delimiters, which would break the source. */
+  private readonly onPaste = (ev: ClipboardEvent): void => {
+    const inner = unwrapDelimited(ev.clipboardData?.getData('text/plain') ?? '');
+    if (inner === null || this.field.readOnly) return;
+    ev.preventDefault();
+    this.replaceSelection(inner);
   };
 
   private emit<K extends keyof StructuredMathEditorEvents>(event: K, payload: StructuredMathEditorEvents[K]): void {
@@ -185,6 +220,8 @@ export class SourceMathEditor implements StructuredMathEditor {
     const el: HTMLElement = this.field;
     el.removeEventListener('input', this.onInput);
     el.removeEventListener('keydown', this.onKeyDown);
+    el.removeEventListener('copy', this.onCopy);
+    el.removeEventListener('paste', this.onPaste);
     for (const key of Object.keys(this.handlers) as (keyof StructuredMathEditorEvents)[]) this.handlers[key].clear();
     this.element.remove();
   }

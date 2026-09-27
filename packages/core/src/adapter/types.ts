@@ -30,6 +30,12 @@ export interface StructuredMathEditorEvents {
   /** An arrow key or Tab had nowhere to go inside the field. */
   moveOut: { direction: MoveOutDirection };
   selectionChange: MathSelectionSnapshot;
+  /**
+   * The user copied (not cut) part or all of the formula: `latex` went to the clipboard as plain
+   * text, in the stored form. `data` is the clipboard being written; more formats can be added to
+   * it while the handler runs.
+   */
+  copy: { latex: string; data: DataTransfer };
 }
 
 /**

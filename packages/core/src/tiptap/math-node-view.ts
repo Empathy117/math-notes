@@ -18,7 +18,7 @@
  * stored bytes survive the editor's re-serialization (D1); an emptied formula is removed.
  */
 import type { NodeViewRendererProps } from '@tiptap/core';
-import type { Node as PMNode } from '@tiptap/pm/model';
+import { DOMSerializer, type Node as PMNode } from '@tiptap/pm/model';
 import { TextSelection, type Transaction } from '@tiptap/pm/state';
 import type { EditorView, NodeView } from '@tiptap/pm/view';
 import type { StructuredMathEditor, StructuredMathEditorFactory } from '../adapter/types';
@@ -251,6 +251,7 @@ export class MathNodeView implements NodeView {
         this.exit(direction === 'backward' || direction === 'upward' ? 'before' : 'after'),
       ),
     );
+    session.cleanup.push(editor.on('copy', ({ latex, data }) => this.copyAsFormula(latex, data, editor)));
 
     // Capture phase: runs before the editor's own key handling (MathLive's is inside its shadow
     // root). It also remembers the key being dispatched, so that an exit triggered by `move-out`
@@ -412,6 +413,22 @@ export class MathNodeView implements NodeView {
     this.staticEl.style.width = '';
     this.staticEl.style.whiteSpace = '';
     this.dom.classList.remove('mn-editing');
+  }
+
+  /**
+   * LaTeX copied inside the formula also goes on the clipboard as a formula node's HTML, so pasted
+   * into the note it is a formula again; plain-text targets get the LaTeX. The whole of a block
+   * formula stays a block formula, a part of one becomes inline. What does not render (a partial
+   * source selection such as `\frac{a`) is left as text.
+   */
+  private copyAsFormula(latex: string, data: DataTransfer, editor: StructuredMathEditor): void {
+    // MathLive may copy a formula with its source spacing and read it back without.
+    const squash = (s: string) => s.replace(/\s+/g, '');
+    const display = this.cfg.display === 'block' && squash(latex) === squash(editor.getValue()) ? 'block' : 'inline';
+    const type = this.node.type.schema.nodes[display === 'block' ? 'mathBlock' : 'mathInline'];
+    if (!type || latex.trim() === '' || !this.cfg.render(latex, display).ok) return;
+    const dom = DOMSerializer.fromSchema(type.schema).serializeNode(type.create({ latex }));
+    if (dom instanceof Element) data.setData('text/html', dom.outerHTML);
   }
 
   // ---------------------------------------------------------------- text-mode preview

@@ -2,7 +2,16 @@
  * Tiptap nodes for inline and block math (design doc D2, D7).
  * Document nodes store only facts: id, latex. Everything else is derived elsewhere.
  */
-import { InputRule, Node, mergeAttributes, type Editor, type Extensions } from '@tiptap/core';
+import {
+  InputRule,
+  Node,
+  getTextBetween,
+  getTextSerializersFromSchema,
+  mergeAttributes,
+  type Editor,
+  type Extensions,
+} from '@tiptap/core';
+import type { Node as PMNode, Schema, Slice } from '@tiptap/pm/model';
 import { NodeSelection, Plugin, PluginKey, TextSelection, type Transaction } from '@tiptap/pm/state';
 import type { EditorView } from '@tiptap/pm/view';
 import type { StructuredMathEditorFactory } from '../adapter/types';
@@ -116,6 +125,42 @@ function ensureIdsPlugin(): Plugin {
 function ensureIdsNow(view: EditorView): void {
   const tr = assignMissingIds(view.state.tr);
   if (tr) view.dispatch(tr.setMeta('addToHistory', false));
+}
+
+/**
+ * The plain text of a copied slice: formulas as Markdown math, `$…$` inline and a block formula
+ * between `$$` lines, as the note's own input rules and most Markdown editors read them back;
+ * everything else as Tiptap's clipboard serializer writes it. Formulas are atoms with no text,
+ * so without this they vanish from the plain-text copy (the HTML copy keeps them either way).
+ */
+export function clipboardText(slice: Slice, schema: Schema): string {
+  const doc = schema.topNodeType.create(null, slice.content);
+  const latex = (node: PMNode) => String(node.attrs['latex'] ?? '').trim();
+  return getTextBetween(
+    doc,
+    { from: 0, to: doc.content.size },
+    {
+      textSerializers: {
+        ...getTextSerializersFromSchema(schema),
+        mathInline: ({ node }) => (latex(node) ? `$${latex(node)}$` : ''),
+        mathBlock: ({ node }) => (latex(node) ? `$$\n${latex(node)}\n$$` : ''),
+      },
+    },
+  );
+}
+
+/**
+ * A plugin prop rather than the nodes' `renderText`: Tiptap's input rules read `renderText` as the
+ * text before the caret, where a formula's `$`, `*` and `_` would set off `$…$`, bold and italic.
+ * Tiptap puts the plugins of later extensions first, so this one runs before the core serializer.
+ */
+function clipboardTextPlugin(): Plugin {
+  return new Plugin({
+    key: new PluginKey('mathClipboardText'),
+    props: {
+      clipboardTextSerializer: (slice, view) => clipboardText(slice, view.state.schema),
+    },
+  });
 }
 
 /** ArrowRight / ArrowLeft next to an inline formula enters it (Notion / RemNote behaviour). */
@@ -352,7 +397,7 @@ const MathInline = Node.create<NodeOptions>({
   },
 
   addProseMirrorPlugins() {
-    return [ensureIdsPlugin()];
+    return [ensureIdsPlugin(), clipboardTextPlugin()];
   },
 
   onCreate() {
